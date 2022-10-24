@@ -6,11 +6,12 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:44:53 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/24 10:58:19 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/24 18:41:11 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	swap_a(); //swap top 2 in pile A
+/*Swap the first 2 elements at the top of stack a.*/
+void	swap_a();
 void	swap_b(); //swap top 2 in pile B
 void	swap_ab();//swap top 2 in both piles
 
@@ -23,4 +24,4 @@ void	rotate_ab();//shift 1 pos upward in both piles
 
 void	r_rotate_a();//shift 1 pos downward (last becomes first) in A
 void	r_rotate_b();//shift 1 pos downward (last becomes first) in B
-void	r_rotate_ab();//shift 1 pos downward in both piles
+void	r_rotate_ab();//shift 1 pos downward in bot piles
