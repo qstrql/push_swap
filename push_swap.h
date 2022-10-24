@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	swap_a(); //swap top 2 in pile A
-void	swap_b(); //swap top 2 in pile B
-void	swap_ab();//swap top 2 in both piles
+void	sa(t_list **lst);
+void	sb(t_list **lst);
+void	ss(t_list **lst);
 
-void	push_a(); //push top from B to A
-void	push_b(); //push top from A to B
+void	pa(t_list **lst);
+void	pb(t_list **lst);
 
-void	rotate_a();//shift 1 pos upward (first becomes last) in A
-void	rotate_b();//shift 1 pos upward (first becomes last) in B
-void	rotate_ab();//shift 1 pos upward in both piles
+void	ra(t_list **lst);
+void	rb(t_list **lst);
+void	rr(t_list **lst);
 
-void	r_rotate_a();//shift 1 pos downward (last becomes first) in A
-void	r_rotate_b();//shift 1 pos downward (last becomes first) in B
-void	r_rotate_ab();//shift 1 pos downward in both piles
+void	rra(t_list **lst);
+void	rrb(t_list **lst);
+void	rrr(t_list **lst);
 

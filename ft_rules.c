@@ -11,17 +11,27 @@
 /* ************************************************************************** */
 
 /*Swap the first 2 elements at the top of stack a.*/
-void	swap_a();
-void	swap_b(); //swap top 2 in pile B
-void	swap_ab();//swap top 2 in both piles
+void	sa(t_list **lst);
+/*Swap the first 2 elements at the top of stack b*/
+void	sb(t_list **lst);
+/*sa and sb at the same time*/
+void	ss(t_list **lst);
 
-void	push_a(); //push top from B to A
-void	push_b(); //push top from A to B
+/*Take the first element at the top of b and put it at the top of a.*/
+void	pa(t_list **lst);
+/*Take the first element at the top of a and put it at the top of b.*/
+void	pb(t_list **lst);
 
-void	rotate_a();//shift 1 pos upward (first becomes last) in A
-void	rotate_b();//shift 1 pos upward (first becomes last) in B
-void	rotate_ab();//shift 1 pos upward in both piles
+/*Shift up all elements of stack a by 1.*/
+void	ra(t_list **lst);
+/*Shift up all elements of stack b by 1.*/
+void	rb(t_list **lst);
+/*ra and rb at the same time.*/
+void	rr(t_list **lst);
 
-void	r_rotate_a();//shift 1 pos downward (last becomes first) in A
-void	r_rotate_b();//shift 1 pos downward (last becomes first) in B
-void	r_rotate_ab();//shift 1 pos downward in bot piles
+/*Shift down all elements of stack a by 1.*/
+void	rra(t_list **lst);
+/*Shift down all elements of stack b by 1.*/
+void	rrb(t_list **lst);
+/*rra and rrb at the same time.*/
+void	rrr(t_list **lst);
