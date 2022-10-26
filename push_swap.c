@@ -6,11 +6,12 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/26 18:03:37 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/26 18:19:11 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft/INCLUDES/libft.h"
 #include <stdlib.h>
 
 #include <stdio.h>
@@ -28,9 +29,11 @@ int main(int argc, char **argv)
 {
 	int	i;
 	char *joined;
+	char **splited;
 	
 	i = 1;
 	joined = ft_calloc(1, sizeof(char));
+	splited = ft_calloc(argc, sizeof(char *));
 	while (i < argc)
 	{
 		joined = ft_realloc(joined, argv[i]);
@@ -38,5 +41,12 @@ int main(int argc, char **argv)
 		i++;
 	}
 	printf("%s\n", joined);
+	splited = ft_split(joined, ' ');
+	i = 0;
+	while (i < argc)
+	{
+		printf("%s\n", splited[i]);
+		i++;
+	}
 	return (0);
 }
