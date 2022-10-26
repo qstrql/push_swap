@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/26 18:19:11 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/26 18:34:08 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int main(int argc, char **argv)
 	i = 1;
 	joined = ft_calloc(1, sizeof(char));
 	splited = ft_calloc(argc, sizeof(char *));
+	if (joined == NULL || splited == NULL)
+		return (-1);
 	while (i < argc)
 	{
 		joined = ft_realloc(joined, argv[i]);
