@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/27 18:23:53 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/27 18:33:51 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,28 +52,11 @@ char **ft_process_args(int argc, char **argv)
 	return (splited);
 }
 
-t_list	*ft_fill_list(char **data)
-{
-	int	i;
-	t_list	*node;
-	t_list	*mapped_lst;
-
-	i = 0;
-	mapped_lst = NULL;
-	while (data != NULL)
-	{
-		node = ft_lstnew(data[i]);
-		ft_lstadd_back(&mapped_lst, node);
-		mapped_lst = mapped_lst->next;
-	}
-	return (mapped_lst);
-}
-
 int main(int argc, char **argv)
 {
 	int		i;
 	int		j;
-	char	**data;
+	// char	**data;
 
 	if (argc < 2)
 		ft_error();
@@ -89,7 +72,6 @@ int main(int argc, char **argv)
 		}
 		i++;
 	}		
-	data = ft_process_args(argc, argv);
-	ft_fill_list(data);
+	ft_process_args(argc, argv);
 	return (0);
 }
