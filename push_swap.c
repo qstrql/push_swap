@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/27 11:54:13 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/27 13:53:12 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,26 +54,25 @@ char **ft_process_args(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	char	**list;
 
 	if (argc < 2)
 		ft_error();
-	else
+	i = 1;
+	while (i < argc)
 	{
-		i = 1;
-		while (i < argc)
+		j = 0;
+		while (argv[i][j] != '\0')
 		{
-			j = 0;
-			while (argv[i][j] != '\0')
-			{
-				if (ft_isdigit(argv[i][j]) == 0 && argv[i][j] != ' ')
-					ft_error();
-				j++;
-			}
-			i++;
-		}		
-		ft_process_args(argc, argv);
-	}
+			if (ft_isdigit(argv[i][j]) == 0 && argv[i][j] != ' ')
+				ft_error();
+			j++;
+		}
+		i++;
+	}		
+	list = ft_process_args(argc, argv);
+	ft_fill_list(list);
 	return (0);
 }
