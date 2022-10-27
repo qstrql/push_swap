@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/26 17:25:01 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/27 11:33:01 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,11 @@ void	rra(t_list **lst);
 void	rrb(t_list **lst);
 void	rrr(t_list **lst);
 
-#include <stddef.h>
+//ft_utils.c
+void	ft_error(void);
 
-size_t	ft_strlen(const char *str);
-
-int ft_process_args(int argc, char **argv);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strcat(char *dest, char *src);
-int	ft_atoi(const char *nptr);
+//push_swap.c
+char	*ft_realloc(char *joined, char *argv);
+char	**ft_process_args(int argc, char **argv);
 
 #endif
