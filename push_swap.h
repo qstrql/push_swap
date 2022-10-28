@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/27 11:33:01 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/28 15:11:24 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,5 @@ void	rrr(t_list **lst);
 void	ft_error(void);
 
 //push_swap.c
-char	*ft_realloc(char *joined, char *argv);
-char	**ft_process_args(int argc, char **argv);
 
 #endif

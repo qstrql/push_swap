@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/27 18:33:51 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/28 16:49:36 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include <stdio.h>
 
-char	*ft_realloc(char *joined, char *argv)
+static char	*ft_realloc(char *joined, char *argv)
 {
 	char	*re_allocd;
 
@@ -25,7 +25,7 @@ char	*ft_realloc(char *joined, char *argv)
 	return (re_allocd);
 }
 
-char **ft_process_args(int argc, char **argv)
+static char **ft_process_args(int argc, char **argv)
 {
 	int	i;
 	char *joined;
@@ -44,34 +44,57 @@ char **ft_process_args(int argc, char **argv)
 		joined = ft_realloc(joined, " ");
 		i++;
 	}
-	printf("joined : %s\n", joined);
 	splited = ft_split(joined, ' ');
-	int j = 1;
-	while (j < argc)
-		printf("%s\n", splited[j++]);
 	return (splited);
+}
+
+static void ft_verrif_args(char *argv)
+{
+	int	i;
+	int	is_space;
+	int	is_sign;
+
+	i = 0;
+	is_space = 1;
+	is_sign = 1;
+	while (argv[i] != '\0')
+	{
+		if (ft_isdigit(argv[i]) == 1)
+		{
+			is_space = 0;
+			is_sign = 0;
+		}
+		else if (argv[i] == ' ' && is_space < 2)
+			is_space += 1;
+		else if ((argv[i] == '+' || argv[i] == '-') && is_sign < 2)
+			is_sign += 1;
+		else
+			ft_error();
+		i++;
+	}
+}
+
+static void	ft_are_args_ok(int argc, char **argv)
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (argv[i][0] == '\0')
+			ft_error();
+		i++;
+	}
+	i = 1;
+	while (i < argc)
+		ft_verrif_args(argv[i++]);
 }
 
 int main(int argc, char **argv)
 {
-	int		i;
-	int		j;
-	// char	**data;
-
 	if (argc < 2)
 		ft_error();
-	i = 1;
-	while (i < argc)
-	{
-		j = 0;
-		while (argv[i][j] != '\0')
-		{
-			if (ft_isdigit(argv[i][j]) == 0 && argv[i][j] != ' ')
-				ft_error();
-			j++;
-		}
-		i++;
-	}		
+	ft_are_args_ok(argc, argv);
 	ft_process_args(argc, argv);
 	return (0);
 }
