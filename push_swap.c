@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/28 16:49:36 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/28 18:19:24 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ int main(int argc, char **argv)
 		ft_error();
 	ft_are_args_ok(argc, argv);
 	ft_process_args(argc, argv);
+//	ft_args_to_tab(argc, argv);
 	return (0);
 }
