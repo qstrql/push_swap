@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/29 19:50:10 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/29 20:12:17 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ void	free_all(char **splitted)
 {
 	int	i;
 
-	i = 0;
+	i = 0;	
 	while (splitted[i] != NULL)
 	{
 		free(splitted[i]);
