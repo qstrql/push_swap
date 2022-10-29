@@ -13,11 +13,11 @@
 #include "../../INCLUDES/libft.h"
 #include <stdlib.h>
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new_list)
 {
-	if (new != NULL)
+	if (new_list != NULL)
 	{
-		new->next = *lst;
-		*lst = new;
+		new_list->next = *lst;
+		*lst = new_list;
 	}
 }
