@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/29 20:12:17 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/30 02:59:36 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_count_tab_size(char *joined)
 			count++;	
 		i++;
 	}
-	count += 1;
+//	count += 1; //faut mieux compter
 	return (count);
 }
 
@@ -59,6 +59,8 @@ static char **ft_process_args(int argc, char **argv, t_stack *stack)
 		i++;
 	}
 	stack->size = ft_count_tab_size(joined);
+	printf("%s\n", "ici");
+	printf("%d\n", stack->size);
 	splitted = ft_calloc(stack->size + 1, sizeof(char *));
 	if (splitted == NULL)
 		exit(EXIT_FAILURE);
@@ -178,11 +180,17 @@ int main(int argc, char **argv)
 	char **splitted;
 	t_stack	*stack;
 
-	stack = ft_calloc(1, sizeof(t_stack));
 	if (argc < 2)
 		ft_error();
+	stack = ft_calloc(1, sizeof(t_stack));
 	ft_are_args_ok(argc, argv);
 	splitted = ft_process_args(argc, argv, stack);
+	int i = 0;
+	while (splitted[i] != NULL)
+	{	
+		printf("%s\n", splitted[i]);
+		i++;
+	}
 	stack->tab = ft_args_to_tab(splitted);
 	free(stack->tab);
 	free(stack);
