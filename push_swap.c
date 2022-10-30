@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/30 23:09:38 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/30 23:16:29 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stdlib.h>
 
 #include <stdio.h>
+//add static char to fts
 
 static char	*ft_realloc(char *joined, char *argv)
 {
@@ -32,13 +33,18 @@ int	ft_count_tab_size(char *joined)
 
 	i = 0;
 	count = 0;
-	while (joined[i] != '\0')
+	while (s[i] != '\0')
 	{
-		if (joined[i] == ' ')
-			count++;	
-		i++;
+		if (s[i] == ' ')
+			while (s[i] == ' ' && s[i] != '\0')
+				i++;
+		else
+		{
+			while (s[i] != ' ' && s[i] != '\0')
+				i++;
+			count++;
+		}
 	}
-//	count += 1; //faut mieux compter
 	return (count);
 }
 
@@ -59,8 +65,6 @@ static char **ft_process_args(int argc, char **argv, t_stack *stack)
 		i++;
 	}
 	stack->size = ft_count_tab_size(joined);
-	printf("%s\n", "ici");
-	printf("%d\n", stack->size);
 	splitted = ft_calloc(stack->size + 1, sizeof(char *));
 	if (splitted == NULL)
 		exit(EXIT_FAILURE);
