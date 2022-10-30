@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/30 02:59:36 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/30 23:09:38 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,9 @@ static char **ft_process_args(int argc, char **argv, t_stack *stack)
 	free(joined);
 	return (splitted);
 }
-
+//^^^^^^^^^^^^^^^^ ARGS JOIN TO **CHAR ^^^^^^^^^^^^^^^^^^
+////////////////////////////////////////////////////////////////////////////////
+//vvvvvvvvvvvvvvvv ARGS VERRIF vvvvvvvvvvvvvvvvvvvvvv
 static void ft_verif_args(char *argv)
 {
 	int	i;
@@ -95,22 +97,87 @@ static void ft_verif_args(char *argv)
 	}
 }
 
-static void	ft_are_args_ok(int argc, char **argv)
+int	ft_args_cmp(char *s1, char *s2)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	if (s1[i] == '+')
+		if (s2[i] != '+')
+			i++;
+	else
+		if (s2[j] == '+')
+			j++;
+	while  (s1[i] != '\0' && s2[j] != '\0' && s1[i] == s2[j])
+	{
+		i++;
+		j++;
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[j]);
+}
+
+void	ft_duplicates(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (argv[i] != '\0')
+	{
+		j = 1;
+		while (argv[j] != '\0')
+		{
+			if (j != i && ft_args_cmp(argv[i], argv[j]) == 0)
+				ft_error();
+			j++;
+		}
+		i++;
+	}
+}
+
+int	ft_zero_check(char *argv)
 {
 	int	i;
 
+	i = 0;
+	if (argv[i] == '+' || argv[i] == '-')
+		i++;
+	while (argv[i] != '\0' && av[i] == '0')
+		i++;
+	if (argv[i] != '\0')
+		return (0);
+	return (1);
+}
+
+static void	ft_are_args_ok(int argc, char **argv)
+{
+	int	i;
+	int	zero;
+
 	i = 1;
+	zero = 0;
 	while (i < argc)
 	{
 		if (argv[i][0] == '\0')
 			ft_error();
 		i++;
 	}
-	i = 1;
+	ft_duplicates(argv);
+	i = 1;	
 	while (i < argc)
-		ft_verif_args(argv[i++]);
+	{
+		zero += ft_zero_check(argv[i]);
+		ft_verif_args(argv[i]);
+		i++;
+	}
+	if (zero > 1)
+		ft_error();
 }
 
+////////////////////////////////////////////////////////////////////////////////
+//vvvvvvvvvvvvvvvvvvvv AFTER JOIN/SPLIT vvvvvvvvvvvvvvvvvvvvvvvvvvvv
 long	ft_atol(const char *nptr)
 {
 	int	i;
