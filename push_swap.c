@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/30 23:16:29 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/30 23:23:28 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ int	ft_count_tab_size(char *joined)
 
 	i = 0;
 	count = 0;
-	while (s[i] != '\0')
+	while (joined[i] != '\0')
 	{
-		if (s[i] == ' ')
-			while (s[i] == ' ' && s[i] != '\0')
+		if (joined[i] == ' ')
+			while (joined[i] == ' ' && joined[i] != '\0')
 				i++;
 		else
 		{
-			while (s[i] != ' ' && s[i] != '\0')
+			while (joined[i] != ' ' && joined[i] != '\0')
 				i++;
 			count++;
 		}
