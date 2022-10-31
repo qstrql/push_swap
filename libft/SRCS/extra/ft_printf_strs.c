@@ -6,12 +6,13 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:23:50 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/30 23:27:09 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:00:28 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../INCLUDES/ft_printf.h"
 #include "../../INCLUDES/libft.h"
+#include <unistd.h>
 
 void	ft_printf_strs(char **strs)
 {
@@ -23,4 +24,5 @@ void	ft_printf_strs(char **strs)
 		ft_printf("strs[%d] : %s\n", i, strs[i]);
 		i++;
 	}
+	write(1, "\n", 1);
 }

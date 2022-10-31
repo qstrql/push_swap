@@ -6,12 +6,13 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 23:24:28 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/30 23:27:27 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:01:02 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../INCLUDES/ft_printf.h"
 #include "../../INCLUDES/libft.h"
+#include <unistd.h>
 
 void	ft_printf_tab(int *tab, int len)
 {
@@ -23,4 +24,5 @@ void	ft_printf_tab(int *tab, int len)
 		ft_printf("tab[%d] : %d\n", i, tab[i]);
 		i++;
 	}
+	write(1, "\n", 1);
 }
