@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:09:38 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/31 16:38:19 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/31 22:07:26 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ void	swap(t_stack *stack, char c)
 	stack->tab[1] = tmp;
 }
 /*
-void	push(t_stack *stack_a, t_stack_b, char c)
+void	push(t_stack *stack_a, t_stack *stack_b, char c)
 {
 	if (c == 'a')
 		ft_printf("pa\n");
 	if (c == 'b')
 		ft_printf("pb\n");
-}*/
-
+}
+*/
 void	rotate(t_stack *stack, char c)
 {
 	int	tmp;
