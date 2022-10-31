@@ -6,7 +6,7 @@
 #    By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 12:29:21 by mjouot            #+#    #+#              #
-#    Updated: 2022/10/31 13:56:23 by mjouot           ###   ########.fr        #
+#    Updated: 2022/10/31 16:21:45 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SRCS = push_swap.c \
 	   ft_utils.c \
 	   ft_are_args_ok.c \
 	   ft_args_to_tab.c \
-	   ft_process_args.c
+	   ft_process_args.c \
+	   ft_moves.c 
 
 CC = cc
 OBJS = $(SRCS:.c=.o)

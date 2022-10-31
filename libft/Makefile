@@ -6,7 +6,7 @@
 #    By: mjouot <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 16:46:46 by mjouot            #+#    #+#              #
-#    Updated: 2022/10/31 11:02:13 by mjouot           ###   ########.fr        #
+#    Updated: 2022/10/31 15:15:52 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -74,7 +74,6 @@ SRCS_EXTRA = \
 		SRCS/extra/ft_putendl.c \
 		SRCS/extra/ft_get_next_line.c \
 		SRCS/extra/ft_intlen.c \
-		SRCS/extra/ft_hexlen.c \
 		SRCS/extra/ft_ishexdigit.c \
 		SRCS/extra/ft_printf_tab.c
 
