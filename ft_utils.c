@@ -14,6 +14,14 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+void	free_stacks(t_stack *stack_a, t_stack *stack_b)
+{	
+	free(stack_a->tab);
+	free(stack_b->tab);
+	free(stack_a);
+	free(stack_b);
+}
+
 void	free_all(char **splitted)
 {
 	int	i;

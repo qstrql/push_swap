@@ -25,6 +25,7 @@ typedef struct s_stack
 //ft_utils.c
 void	ft_error(void);
 void	free_all(char **splited);
+void	free_stacks(t_stack *stack_a, t_stack *stack_b);
 
 //ft_are_args_ok.c
 void	ft_are_args_ok(int argc, char **argv);
