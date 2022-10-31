@@ -14,6 +14,19 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+void	free_all(char **splitted)
+{
+	int	i;
+
+	i = 0;	
+	while (splitted[i] != NULL)
+	{
+		free(splitted[i]);
+		i++;
+	}
+	free(splitted);
+}
+
 void	ft_error(void)
 {
 	write(2, "Error\n", 6);

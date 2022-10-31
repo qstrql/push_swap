@@ -6,10 +6,11 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:37:09 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/14 14:44:48 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/30 17:06:37 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../INCLUDES/libft.h"
 #include "../../INCLUDES/ft_printf.h"
 #include <unistd.h>
 

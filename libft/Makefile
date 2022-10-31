@@ -6,7 +6,7 @@
 #    By: mjouot <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 16:46:46 by mjouot            #+#    #+#              #
-#    Updated: 2022/10/10 11:03:13 by mjouot           ###   ########.fr        #
+#    Updated: 2022/10/31 11:02:13 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -46,15 +46,15 @@ SRCS = \
 	  SRCS/libft/ft_split.c \
 	  SRCS/libft/ft_tolower.c \
 	  SRCS/libft/ft_toupper.c \
-	  SRCS/bonus/ft_lstnew_bonus.c \
-	  SRCS/bonus/ft_lstadd_front_bonus.c \
-	  SRCS/bonus/ft_lstsize_bonus.c \
-	  SRCS/bonus/ft_lstlast_bonus.c \
-	  SRCS/bonus/ft_lstadd_back_bonus.c \
-	  SRCS/bonus/ft_lstdelone_bonus.c \
-	  SRCS/bonus/ft_lstclear_bonus.c \
-	  SRCS/bonus/ft_lstiter_bonus.c \
-	  SRCS/bonus/ft_lstmap_bonus.c
+	  SRCS/libft/ft_lstnew.c \
+	  SRCS/libft/ft_lstadd_front.c \
+	  SRCS/libft/ft_lstsize.c \
+	  SRCS/libft/ft_lstlast.c \
+	  SRCS/libft/ft_lstadd_back.c \
+	  SRCS/libft/ft_lstdelone.c \
+	  SRCS/libft/ft_lstclear.c \
+	  SRCS/libft/ft_lstiter.c \
+	  SRCS/libft/ft_lstmap.c
 
 SRCS_EXTRA = \
 		SRCS/printf/ft_printf.c \
@@ -63,11 +63,20 @@ SRCS_EXTRA = \
 		SRCS/printf/ft_printnbr_base.c \
 		SRCS/printf/ft_utilities.c \
 			\
-		#SRCS/gnl/get_next_line_utils_bonus.c \
-		#SRCS/gnl/get_next_line_bonus.c \
-			\
 		SRCS/extra/ft_super_strjoin.c \
-		SRCS/extra/ft_strndup.c
+		SRCS/extra/ft_strndup.c \
+		SRCS/extra/ft_isprime.c \
+		SRCS/extra/ft_printf_strs.c \
+		SRCS/extra/ft_abs.c \
+		SRCS/extra/ft_putnbr.c \
+		SRCS/extra/ft_putstr.c \
+		SRCS/extra/ft_putchar.c \
+		SRCS/extra/ft_putendl.c \
+		SRCS/extra/ft_get_next_line.c \
+		SRCS/extra/ft_intlen.c \
+		SRCS/extra/ft_hexlen.c \
+		SRCS/extra/ft_ishexdigit.c \
+		SRCS/extra/ft_printf_tab.c
 
 CC = gcc
 OBJS = $(SRCS:.c=.o)

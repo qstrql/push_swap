@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_tab.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 17:44:22 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/30 17:04:00 by mjouot           ###   ########.fr       */
+/*   Created: 2022/10/30 23:24:28 by mjouot            #+#    #+#             */
+/*   Updated: 2022/10/30 23:27:27 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../../INCLUDES/ft_printf.h"
+#include "../../INCLUDES/libft.h"
 
-# include <stdarg.h>
+void	ft_printf_tab(int *tab, int len)
+{
+	int	i;
 
-int	ft_printf(const char *str, ...);
-int	ft_check_str(const char *str, va_list args);
-int	ft_strlen_printf(const char *str);
-int	ft_putchar_r(const char c);
-int	ft_putstr_r(const char *s);
-int	ft_printnbr(int n, char c);
-int	ft_printnbr_base(unsigned long n, const char *base, char c);
-
-#endif
+	i = 0;
+	while (i < len)
+	{
+		ft_printf("tab[%d] : %d\n", i, tab[i]);
+		i++;
+	}
+}

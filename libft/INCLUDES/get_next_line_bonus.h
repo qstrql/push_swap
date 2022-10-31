@@ -27,7 +27,7 @@ char	*ft_get_extra(char *str);
 size_t	ft_strlen(const char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *buf, char *line);
+char	*ft_strjoin_gnl(char *buf, char *line)
 char	*ft_realloc(char *buf, char *line);
 
 #endif 

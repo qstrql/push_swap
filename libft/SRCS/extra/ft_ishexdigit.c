@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_ishexdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 17:44:22 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/30 17:04:00 by mjouot           ###   ########.fr       */
+/*   Created: 2022/10/30 17:25:53 by mjouot            #+#    #+#             */
+/*   Updated: 2022/10/30 17:27:50 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../../INCLUDES/libft.h"
 
-# include <stdarg.h>
-
-int	ft_printf(const char *str, ...);
-int	ft_check_str(const char *str, va_list args);
-int	ft_strlen_printf(const char *str);
-int	ft_putchar_r(const char c);
-int	ft_putstr_r(const char *s);
-int	ft_printnbr(int n, char c);
-int	ft_printnbr_base(unsigned long n, const char *base, char c);
-
-#endif
+int		ft_ishexdigit(int c)
+{
+	if (ft_isdigit(c) == 1 || (c >= 'A' && c <= 'F') || (c >= 'a' && c <= 'f'))
+		return (1);
+	else
+		return (0);
+}

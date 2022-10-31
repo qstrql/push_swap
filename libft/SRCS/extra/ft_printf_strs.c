@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_strs.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 17:44:22 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/30 17:04:00 by mjouot           ###   ########.fr       */
+/*   Created: 2022/10/30 16:23:50 by mjouot            #+#    #+#             */
+/*   Updated: 2022/10/30 23:27:09 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../../INCLUDES/ft_printf.h"
+#include "../../INCLUDES/libft.h"
 
-# include <stdarg.h>
+void	ft_printf_strs(char **strs)
+{
+	int	i;
 
-int	ft_printf(const char *str, ...);
-int	ft_check_str(const char *str, va_list args);
-int	ft_strlen_printf(const char *str);
-int	ft_putchar_r(const char c);
-int	ft_putstr_r(const char *s);
-int	ft_printnbr(int n, char c);
-int	ft_printnbr_base(unsigned long n, const char *base, char c);
-
-#endif
+	i = 0;
+	while (strs[i] != NULL)
+	{
+		ft_printf("strs[%d] : %s\n", i, strs[i]);
+		i++;
+	}
+}
