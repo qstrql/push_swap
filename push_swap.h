@@ -48,4 +48,9 @@ void	push(t_stack *stack_a, t_stack *stack_b, char c);
 void	rotate(t_stack *stack, char c);
 void	reverse(t_stack *stack, char c);
 
+//ft_init_sort.c
+int	ft_init_sort(t_stack *sa, t_stack *sb);
+void	ft_sort_three(t_stack *sa);
+void	ft_sort_more(t_stack *sa, t_stack *sb);
+
 #endif
