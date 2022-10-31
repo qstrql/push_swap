@@ -6,20 +6,17 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/31 11:46:41 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:34:28 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/INCLUDES/libft.h"
 #include <stdlib.h>
-#include <limits.h>
 
-#include <stdio.h>
-
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	char **splitted;
+	char	**splitted;
 	t_stack	*stack;
 
 	if (argc < 2)

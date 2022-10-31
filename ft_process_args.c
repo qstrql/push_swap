@@ -6,14 +6,13 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:17:59 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/31 12:18:00 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:33:37 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/INCLUDES/libft.h"
 #include <stdlib.h>
-#include <limits.h>
 
 char	*ft_realloc(char *joined, char *argv)
 {
@@ -48,10 +47,10 @@ int	ft_count_tab_size(char *joined)
 
 char	**ft_process_args(int argc, char **argv, t_stack *stack)
 {
-	int	i;
-	char *joined;
-	char **splitted;
-	
+	int		i;
+	char	*joined;
+	char	**splitted;
+
 	i = 1;
 	joined = ft_calloc(1, sizeof(char));
 	if (joined == NULL)

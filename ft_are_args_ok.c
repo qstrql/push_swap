@@ -6,16 +6,14 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:21:10 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/31 12:21:11 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:32:14 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/INCLUDES/libft.h"
-#include <stdlib.h>
-#include <limits.h>
 
-void ft_verif_args(char *argv)
+void	ft_verif_args(char *argv)
 {
 	int	i;
 	int	is_space;
@@ -58,7 +56,7 @@ int	ft_args_cmp(char *s1, char *s2)
 		if (s2[j] == '+')
 			j++;
 	}
-	while  (s1[i] != '\0' && s2[j] != '\0' && s1[i] == s2[j])
+	while (s1[i] != '\0' && s2[j] != '\0' && s1[i] == s2[j])
 	{
 		i++;
 		j++;
@@ -113,7 +111,7 @@ void	ft_are_args_ok(int argc, char **argv)
 		i++;
 	}
 	ft_duplicates(argv);
-	i = 1;	
+	i = 1;
 	while (i < argc)
 	{
 		zero += ft_zero_check(argv[i]);

@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/29 19:44:48 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:31:21 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_stack
 {
 	int	*tab;
 	int	size;
-}			   t_stack;
+}				t_stack;
 
 //ft_utils.c
 void	ft_error(void);
@@ -29,17 +29,23 @@ void	free_all(char **splited);
 //ft_are_args_ok.c
 void	ft_are_args_ok(int argc, char **argv);
 void	ft_duplicates(char **argv);
-int	ft_args_cmp(char *s1, char *s2);
+int		ft_args_cmp(char *s1, char *s2);
 void	ft_verif_args(char *argv);
-int	ft_zero_check(char *argv);
+int		ft_zero_check(char *argv);
 
 //ft_process_args.c
 char	**ft_process_args(int argc, char **argv, t_stack *stack);
-int	ft_count_tab_size(char *joined);
+int		ft_count_tab_size(char *joined);
 char	*ft_realloc(char *joined, char *argv);
 
 //ft_args_to_tab.c
-int	*ft_args_to_tab(char **splitted, t_stack *stack);
+int		*ft_args_to_tab(char **splitted, t_stack *stack);
 long	ft_atol(const char *nptr);
+
+//ft_moves.c
+void	swap(t_stack *stack, char c);
+void	push(t_stack *stack, char c);
+void	rotate(t_stack *stack, char c);
+void	reverse(t_stack *stack, char c);
 
 #endif

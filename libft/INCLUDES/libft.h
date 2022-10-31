@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 16:15:51 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/31 10:51:22 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:28:37 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,13 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 //ft_printf
-int	ft_printf(const char *str, ...);
-int	ft_check_str(const char *str, va_list args);
-int	ft_strlen_printf(const char *str);
-int	ft_putchar_r(const char c);
-int	ft_putstr_r(const char *s);
-int	ft_printnbr(int n, char c);
-int	ft_printnbr_base(unsigned long n, const char *base, char c);
+int		ft_printf(const char *str, ...);
+int		ft_check_str(const char *str, va_list args);
+int		ft_strlen_printf(const char *str);
+int		ft_putchar_r(const char c);
+int		ft_putstr_r(const char *s);
+int		ft_printnbr(int n, char c);
+int		ft_printnbr_base(unsigned long n, const char *base, char c);
 
 //extra
 char	*ft_super_strjoin(int size, char **strs, char *sep);
@@ -95,7 +95,6 @@ void	ft_putchar(const char c);
 void	ft_putendl(char *s);
 char	*get_next_line(int fd);
 int		ft_intlen(int n);
-unsigned long 	ft_hexlen(unsigned long n);
 int		ft_ishexdigit(int c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:23:14 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/31 12:23:40 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:32:59 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 long	ft_atol(const char *nptr)
 {
-	int	i;
-	int	neg;
+	int		i;
+	int		neg;
 	long	nb;
 
 	i = 0;
@@ -42,10 +42,10 @@ long	ft_atol(const char *nptr)
 
 int	*ft_args_to_tab(char **splitted, t_stack *stack)
 {
-	int	i;
+	int		i;
 	long	n;
-	int	*tab;
-	
+	int		*tab;
+
 	tab = ft_calloc(stack->size + 1, sizeof(int));
 	i = 0;
 	while (splitted[i] != NULL)
