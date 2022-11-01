@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/31 17:19:15 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/01 15:35:45 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_stack
 }				t_stack;
 
 //ft_utils.c
+void	ft_swap(int *a, int *b);
 void	ft_error(void);
 void	free_all(char **splited);
 void	free_stacks(t_stack *stack_a, t_stack *stack_b);
@@ -44,12 +45,13 @@ long	ft_atol(const char *nptr);
 
 //ft_moves.c
 void	swap(t_stack *stack, char c);
-void	push(t_stack *stack_a, t_stack *stack_b, char c);
+void	push_a(t_stack *stack_a, t_stack *stack_b);
+void	push_b(t_stack *stack_a, t_stack *stack_b);
 void	rotate(t_stack *stack, char c);
 void	reverse(t_stack *stack, char c);
 
 //ft_init_sort.c
-int	ft_init_sort(t_stack *sa, t_stack *sb);
+int		ft_init_sort(t_stack *sa, t_stack *sb);
 void	ft_sort_three(t_stack *sa);
 void	ft_sort_more(t_stack *sa, t_stack *sb);
 

@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/31 19:56:58 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/01 19:03:48 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,22 @@
 int	main(int argc, char **argv)
 {
 	char	**splitted;
-	t_stack	*stack_a;
-	t_stack *stack_b;
+	t_stack	*sa;
+	t_stack *sb;
 
 	if (argc < 2)
 		ft_error();
 	ft_are_args_ok(argc, argv);
-	stack_a = ft_calloc(1, sizeof(t_stack));
-	stack_b = ft_calloc(1, sizeof(t_stack));
-	splitted = ft_process_args(argc, argv, stack_a);
-	stack_a->tab = ft_args_to_tab(splitted, stack_a);
-	stack_b->tab = ft_calloc(stack_a->size + 1, sizeof(int));
-	ft_printf_tab(stack_a->tab, stack_a->size);
-	ft_init_sort(stack_a, stack_b);
-	ft_printf_tab(stack_a->tab, stack_a->size);
-	free_stacks(stack_a, stack_b);
+	sa = ft_calloc(1, sizeof(t_stack));
+	sb = ft_calloc(1, sizeof(t_stack));
+	splitted = ft_process_args(argc, argv, sa);
+	sa->tab = ft_args_to_tab(splitted, sa);
+	sb->tab = ft_calloc(sa->size + 1, sizeof(int));
+	ft_printf_stack(sa->tab, sa->size);
+	ft_init_sort(sa, sb);
+	ft_printf_stack(sa->tab, sa->size);
+	free_stacks(sa, sb);
 	return (0);
 }
+//normaliser les valeurs
+//stocker les instructions dans un tab 

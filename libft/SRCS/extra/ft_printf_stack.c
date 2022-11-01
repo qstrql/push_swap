@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_tab.c                                    :+:      :+:    :+:   */
+/*   ft_printf_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
+/*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 23:24:28 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/01 13:49:59 by mjouot           ###   ########.fr       */
+/*   Created: 2022/11/01 13:35:01 by mjouot            #+#    #+#             */
+/*   Updated: 2022/11/01 13:55:55 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../INCLUDES/ft_printf.h"
 #include "../../INCLUDES/libft.h"
-#include <unistd.h>
 
-void	ft_printf_tab(int *tab, int len)
+void	ft_printf_stack(int *tab, int len)
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	while (i < len)
+	i = len - 1;
+	j = 1;
+	while (j <= len)
 	{
-		ft_printf("tab[%d] : %d\n", i, tab[i]);
-		i++;
+		ft_printf(" (%d) | [%d] \n", i, tab[i]);
+		j++;
+		i--;
 	}
-	write(1, "\n", 1);
+	ft_printf("  _  |  _  \n");
 }

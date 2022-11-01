@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:23:14 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/31 17:17:07 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/01 11:49:30 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,16 @@ void	ft_duplicates(int *tab, t_stack *stack)
 int	*ft_args_to_tab(char **splitted, t_stack *stack)
 {
 	int		i;
+	int		j;
 	long	n;
 	int		*tab;
 	
 	tab = ft_calloc(stack->size + 1, sizeof(int));
-	i = 0;
-	while (splitted[i] != NULL)
+	j = 0;
+	i = stack->size - 1;
+	while (i >= 0)
 	{
-		n = ft_atol(splitted[i]);
+		n = ft_atol(splitted[j]);
 		if (n > INT_MAX || n < INT_MIN)
 		{
 			free_all(splitted);
@@ -77,7 +79,8 @@ int	*ft_args_to_tab(char **splitted, t_stack *stack)
 			ft_error();
 		}
 		tab[i] = n;
-		i++;
+		i--;
+		j++;
 	}
 	ft_duplicates(tab, stack);
 	free_all(splitted);
