@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/01 19:31:09 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/01 19:41:19 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 */
 void	ft_sort_three(t_stack *sa)
 {
-	if (sa->tab[0] < sa->tab[1] && sa->tab[0] < sa->tab[2])
+	if (sa->tab[2] > sa->tab[1] && sa->tab[2] > sa->tab[0])
 		rotate(sa, 'a');
 	else if (sa->tab[1] > sa->tab[0] && sa->tab[1] > sa->tab[2])
 		reverse(sa, 'a');
-	if (sa->tab[0] > sa->tab[1])
+	if (sa->tab[2] > sa->tab[1])
 		swap(sa, 'a');
 }
 
