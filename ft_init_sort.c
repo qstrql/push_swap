@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/02 18:01:41 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/02 18:18:09 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,25 @@ int	ft_stack_is_sorted(t_stack *sa)
 
 void	ft_sort_five(t_stack *sa, t_stack *sb)
 {	
-	const int	i = sa->size - 1;
-	const int	j = sa->size - 2;
-	const int	k = sa->size - 3;
-
+	ft_printf_stack(sa->tab, sa->size);
 	if (sa->tab[sa->size - 1] == (sa->size - 1))
 		rotate(sa, 'a');
 	if (sa->tab[sa->size - 2] == (sa->size - 1))
 		reverse(sa, 'a');
 	push_b(sa, sb);
 	push_b(sa, sb);
+	ft_printf_stack(sa->tab, sa->size);
+	ft_printf_stack(sb->tab, sb->size);
 	ft_sort_three(sa);
+	ft_printf_stack(sa->tab, sa->size);
 	while (sa->tab[sa->size - 1] < sb->tab[sb->size - 1])
 		rotate(sa, 'a');
 	push_a(sa, sb);
 	while (sa->tab[sa->size - 1] < sb->tab[sb->size - 1])
 		rotate(sa, 'a');
-	push_a(sa, sb);	
-	if (sa->tab[i] == 0 || sa->tab[j] == 0 || sa->tab[k] == 0)
+	push_a(sa, sb);
+	ft_printf_stack(sa->tab, sa->size);
+	if (ft_index_of(0, sa->tab, sa->size) >= 2)
 	{
 		while (sa->tab[sa->size - 1] != 0)
 			rotate(sa, 'a');
