@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/02 11:12:15 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/02 18:01:41 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,18 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 */
 void	ft_sort_three(t_stack *sa)
 {
-	if (sa->tab[2] > sa->tab[1] && sa->tab[2] > sa->tab[0])
+	int	i;
+	int	j;
+	int	k;
+
+	i = sa->size - 1;
+	j = sa->size - 2;
+	k = sa->size - 3;
+	if (sa->tab[i] > sa->tab[j] && sa->tab[i] > sa->tab[k])
 		rotate(sa, 'a');
-	else if (sa->tab[1] > sa->tab[0] && sa->tab[1] > sa->tab[2])
+	else if (sa->tab[j] > sa->tab[k] && sa->tab[j] > sa->tab[i])
 		reverse(sa, 'a');
-	if (sa->tab[2] > sa->tab[1])
+	if (sa->tab[i] > sa->tab[j])
 		swap(sa, 'a');
 }
 
@@ -51,10 +58,35 @@ int	ft_stack_is_sorted(t_stack *sa)
 }
 
 void	ft_sort_five(t_stack *sa, t_stack *sb)
-{
+{	
+	const int	i = sa->size - 1;
+	const int	j = sa->size - 2;
+	const int	k = sa->size - 3;
+
+	if (sa->tab[sa->size - 1] == (sa->size - 1))
+		rotate(sa, 'a');
+	if (sa->tab[sa->size - 2] == (sa->size - 1))
+		reverse(sa, 'a');
 	push_b(sa, sb);
 	push_b(sa, sb);
 	ft_sort_three(sa);
+	while (sa->tab[sa->size - 1] < sb->tab[sb->size - 1])
+		rotate(sa, 'a');
+	push_a(sa, sb);
+	while (sa->tab[sa->size - 1] < sb->tab[sb->size - 1])
+		rotate(sa, 'a');
+	push_a(sa, sb);	
+	if (sa->tab[i] == 0 || sa->tab[j] == 0 || sa->tab[k] == 0)
+	{
+		while (sa->tab[sa->size - 1] != 0)
+			rotate(sa, 'a');
+	}
+	else
+	{
+		while (sa->tab[sa->size - 1] != 0)
+			reverse(sa, 'a');
+	}
+	ft_printf_stack(sa->tab, sa->size);
 }
 
 int	ft_init_sort(t_stack *sa, t_stack *sb)
@@ -73,11 +105,11 @@ int	ft_init_sort(t_stack *sa, t_stack *sb)
 		ft_sort_three(sa);
 		return (1);
 	}
-//	if (sa->size == 5 && ft_stack_is_sorted(sa) == 0)
-//	{
-//		ft_sort_five(sa, sb);
-//		return (1);
-//	}
+	if (sa->size == 5 && ft_stack_is_sorted(sa) == 0)
+	{
+		ft_sort_five(sa, sb);
+		return (1);
+	}
 //	if (sa->size > 5) 
 //	{
 //		ft_sort_more(sa, sb);

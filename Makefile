@@ -6,7 +6,7 @@
 #    By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 12:29:21 by mjouot            #+#    #+#              #
-#    Updated: 2022/11/02 13:35:15 by mjouot           ###   ########.fr        #
+#    Updated: 2022/11/02 14:55:56 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,4 +44,5 @@ fclean: clean
 
 re: fclean all
 
+.SILENT:
 .PHONY: all clean fclean re
