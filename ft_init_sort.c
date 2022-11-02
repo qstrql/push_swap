@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/01 19:41:19 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/02 11:12:15 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ int	ft_stack_is_sorted(t_stack *sa)
 	}
 	return (1);
 }
-/*
+
 void	ft_sort_five(t_stack *sa, t_stack *sb)
 {
 	push_b(sa, sb);
 	push_b(sa, sb);
 	ft_sort_three(sa);
 }
-*/
+
 int	ft_init_sort(t_stack *sa, t_stack *sb)
 {
 	(void)sb;
@@ -78,7 +78,7 @@ int	ft_init_sort(t_stack *sa, t_stack *sb)
 //		ft_sort_five(sa, sb);
 //		return (1);
 //	}
-//	if (sa->size > 3)
+//	if (sa->size > 5) 
 //	{
 //		ft_sort_more(sa, sb);
 //		return (1);

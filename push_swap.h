@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/01 15:35:45 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/02 13:34:36 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,10 @@ void	reverse(t_stack *stack, char c);
 int		ft_init_sort(t_stack *sa, t_stack *sb);
 void	ft_sort_three(t_stack *sa);
 void	ft_sort_more(t_stack *sa, t_stack *sb);
+
+//ft_normalize.c
+void	ft_normalize(t_stack *stack);
+int		ft_index_of(int key, int *tab, int size);
+void	ft_sort_int_tab(int *tab, int size);
 
 #endif
