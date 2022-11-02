@@ -75,8 +75,7 @@ SRCS_EXTRA = \
 		SRCS/extra/ft_get_next_line.c \
 		SRCS/extra/ft_intlen.c \
 		SRCS/extra/ft_ishexdigit.c \
-		SRCS/extra/ft_printf_tab.c \
-		SRCS/extra/ft_printf_stack.c
+		SRCS/extra/ft_printf_tab.c 
 
 CC = cc
 OBJS = $(SRCS:.c=.o)

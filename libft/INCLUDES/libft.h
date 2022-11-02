@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 16:15:51 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/01 13:51:33 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/02 18:24:54 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,5 @@ void	ft_putendl(char *s);
 char	*get_next_line(int fd);
 int		ft_intlen(int n);
 int		ft_ishexdigit(int c);
-void	ft_printf_stack(int *tab, int len);
 
 #endif

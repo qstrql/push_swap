@@ -6,25 +6,25 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:35:01 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/01 13:55:55 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/02 18:27:39 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../INCLUDES/ft_printf.h"
-#include "../../INCLUDES/libft.h"
+#include "push_swap.h"
+#include "libft/INCLUDES/ft_printf.h"
+#include "libft/INCLUDES/libft.h"
 
-void	ft_printf_stack(int *tab, int len)
+void	ft_printf_stack(t_stack *sa, t_stack *sb)
 {
 	int	i;
 	int	j;
 
-	i = len - 1;
+	i = sa->size - 1;
 	j = 1;
-	while (j <= len)
+	while (j <= sa->size)
 	{
-		ft_printf(" (%d) | [%d] \n", i, tab[i]);
+		ft_printf("a: (%d) | [%d] -- b: (%d) | [%d] \n", i, sa->tab[i], i, sb->tab[i]);
 		j++;
 		i--;
 	}
-	ft_printf("  _  |  _  \n");
 }

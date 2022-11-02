@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/02 13:34:36 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/02 18:25:09 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_swap(int *a, int *b);
 void	ft_error(void);
 void	free_all(char **splited);
 void	free_stacks(t_stack *stack_a, t_stack *stack_b);
+void	ft_printf_stack(t_stack *sa, t_stack *sb);
 
 //ft_are_args_ok.c
 void	ft_are_args_ok(int argc, char **argv);

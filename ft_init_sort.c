@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/02 18:19:40 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/02 18:28:44 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,20 +58,25 @@ int	ft_stack_is_sorted(t_stack *sa)
 }
 
 void	ft_sort_five(t_stack *sa, t_stack *sb)
-{	
+{
+	ft_printf_stack(sa, sb);
 	if (sa->tab[sa->size - 1] == (sa->size - 1))
 		rotate(sa, 'a');
 	if (sa->tab[sa->size - 2] == (sa->size - 1))
 		reverse(sa, 'a');
 	push_b(sa, sb);
 	push_b(sa, sb);
+	ft_printf_stack(sa, sb);
 	ft_sort_three(sa);
 	while (sa->tab[sa->size - 1] < sb->tab[sb->size - 1])
 		rotate(sa, 'a');
 	push_a(sa, sb);
+	ft_printf_stack(sa, sb);
 	while (sa->tab[sa->size - 1] < sb->tab[sb->size - 1])
 		rotate(sa, 'a');
 	push_a(sa, sb);
+	ft_printf_stack(sa, sb);
+	ft_printf("\n");
 	if (ft_index_of(0, sa->tab, sa->size) >= 2)
 	{
 		while (sa->tab[sa->size - 1] != 0)
@@ -82,6 +87,7 @@ void	ft_sort_five(t_stack *sa, t_stack *sb)
 		while (sa->tab[sa->size - 1] != 0)
 			reverse(sa, 'a');
 	}
+	ft_printf_stack(sa, sb);
 }
 
 int	ft_init_sort(t_stack *sa, t_stack *sb)
