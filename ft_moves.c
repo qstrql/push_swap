@@ -6,18 +6,21 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:09:38 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/04 11:26:55 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/04 17:12:57 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/INCLUDES/libft.h"
+static int	count = 0;
 
 void	swap(t_stack *stack, char c)
 {
 	int	tmp;
 
 	tmp = 0;
+	count++;
+	ft_printf("count : %d -- ", count);
 	if (c == 'a')
 		ft_printf("sa\n");
 	if (c == 'b')
@@ -29,6 +32,8 @@ void	swap(t_stack *stack, char c)
 
 void	push_a(t_stack *stack_a, t_stack *stack_b)
 {
+	count++;
+	ft_printf("count : %d --", count);
 	ft_printf("pa\n");
     stack_a->size += 1;
 	stack_b->size -= 1;
@@ -38,6 +43,8 @@ void	push_a(t_stack *stack_a, t_stack *stack_b)
 
 void	push_b(t_stack *stack_a, t_stack *stack_b)
 {
+	count++;
+	ft_printf("count : %d --", count);
 	ft_printf("pb\n");
     stack_b->size += 1;
 	stack_a->size -= 1;
@@ -50,6 +57,8 @@ void	reverse(t_stack *stack, char c)
 	int	tmp;
 
 	tmp = stack->tab[0];
+	count++;
+	ft_printf("count : %d --", count);
 	if (c == 'a')
 		ft_printf("rra\n");
 	if (c == 'b')
@@ -63,6 +72,8 @@ void	rotate(t_stack *stack, char c)
 	int	tmp;
 
 	tmp = stack->tab[stack->size - 1];
+	count++;
+	ft_printf("count : %d --", count);
 	if (c == 'a')
 		ft_printf("ra\n");
 	if (c == 'b')

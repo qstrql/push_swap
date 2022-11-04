@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:23:14 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/04 14:33:28 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/04 17:23:06 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,13 @@ int	*ft_args_to_tab(char **splitted, t_stack *stack)
 	{
 		n = ft_atol(splitted[j]);
 		if (n > INT_MAX || n < INT_MIN)
-			ft_error(splitted, stack, NULL, tab);
+			ft_error(splitted, stack, tab);
 		tab[i] = n;
 		i--;
 		j++;
 	}
 	if (ft_duplicates(tab, stack) == 1)
-		ft_error(splitted, stack, NULL, tab);
+		ft_error(splitted, stack, tab);
 	free_all(splitted);
 	return (tab);
 }
