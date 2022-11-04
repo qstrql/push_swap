@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/02 18:25:09 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/04 14:31:15 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 
 //ft_utils.c
 void	ft_swap(int *a, int *b);
-void	ft_error(void);
+void	ft_error(char **splitted, t_stack *sa, t_stack *sb, int *tab);
 void	free_all(char **splited);
 void	free_stacks(t_stack *stack_a, t_stack *stack_b);
 void	ft_printf_stack(t_stack *sa, t_stack *sb);
@@ -41,7 +41,7 @@ char	*ft_realloc(char *joined, char *argv);
 
 //ft_args_to_tab.c
 int		*ft_args_to_tab(char **splitted, t_stack *stack);
-void	ft_duplicates(int *tab, t_stack *stack);
+int		ft_duplicates(int *tab, t_stack *stack);
 long	ft_atol(const char *nptr);
 
 //ft_moves.c
