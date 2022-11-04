@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:28:13 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/01 11:22:25 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/04 14:30:57 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,14 @@ void	free_all(char **splitted)
 	free(splitted);
 }
 
-void	ft_error(void)
+void	ft_error(char **splitted, t_stack *sa, t_stack *sb, int *tab)
 {
 	write(2, "Error\n", 6);
+	if (tab)
+		free(tab);
+	if (splitted)
+		free_all(splitted);
+	if (sa && sb)
+		free_stacks(sa, sb);
 	exit(EXIT_FAILURE);
 }

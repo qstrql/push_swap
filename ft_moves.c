@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:09:38 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/01 18:11:14 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/04 11:26:55 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	push_a(t_stack *stack_a, t_stack *stack_b)
     stack_a->size += 1;
 	stack_b->size -= 1;
 	stack_a->tab[stack_a->size - 1] = stack_b->tab[stack_b->size];
+	stack_b->tab[stack_b->size] = '\0';
 }
 
 void	push_b(t_stack *stack_a, t_stack *stack_b)
@@ -41,6 +42,7 @@ void	push_b(t_stack *stack_a, t_stack *stack_b)
     stack_b->size += 1;
 	stack_a->size -= 1;
 	stack_b->tab[stack_b->size - 1] = stack_a->tab[stack_a->size];
+	stack_a->tab[stack_a->size] = '\0';
 }
 
 void	reverse(t_stack *stack, char c)

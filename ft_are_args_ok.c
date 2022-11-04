@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:21:10 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/31 17:21:29 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/04 14:32:42 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_verif_args(char *argv)
 		else if ((argv[i] == '+' || argv[i] == '-') && is_sign < 2)
 			is_sign += 1;
 		else
-			ft_error();
+			ft_error(NULL, NULL, NULL, NULL);
 		i++;
 	}
 }
@@ -42,7 +42,7 @@ void	ft_are_args_ok(int argc, char **argv)
 	while (i < argc)
 	{
 		if (argv[i][0] == '\0')
-			ft_error();
+			ft_error(NULL, NULL, NULL, NULL);
 		i++;
 	}
 	i = 1;

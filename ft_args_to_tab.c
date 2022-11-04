@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:23:14 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/02 13:06:40 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/04 14:33:28 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ long	ft_atol(const char *nptr)
 	return (nb * neg);
 }
 
-void	ft_duplicates(int *tab, t_stack *stack)
+int	ft_duplicates(int *tab, t_stack *stack)
 {
 	int	i;
 	int	j;
@@ -52,11 +52,12 @@ void	ft_duplicates(int *tab, t_stack *stack)
 		while (j < stack->size)
 		{
 			if (tab[i] == tab[j] && i != j)
-				ft_error();
+				return (1);
 			j++;
 		}
 		i++;
 	}
+	return (0);
 }
 
 int	*ft_args_to_tab(char **splitted, t_stack *stack)
@@ -73,16 +74,13 @@ int	*ft_args_to_tab(char **splitted, t_stack *stack)
 	{
 		n = ft_atol(splitted[j]);
 		if (n > INT_MAX || n < INT_MIN)
-		{
-			free_all(splitted);
-			free(tab);
-			ft_error();
-		}
+			ft_error(splitted, stack, NULL, tab);
 		tab[i] = n;
 		i--;
 		j++;
 	}
-	ft_duplicates(tab, stack);
+	if (ft_duplicates(tab, stack) == 1)
+		ft_error(splitted, stack, NULL, tab);
 	free_all(splitted);
 	return (tab);
 }

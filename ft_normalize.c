@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 13:07:19 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/02 13:36:07 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/04 14:14:07 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,5 @@ void	ft_normalize(t_stack *stack)
 		stack->tab[j] = i;
 		i++;
 	}
+	free(sorted);
 }

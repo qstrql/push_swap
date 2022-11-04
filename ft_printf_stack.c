@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:35:01 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/02 18:27:39 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/04 10:35:27 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ void	ft_printf_stack(t_stack *sa, t_stack *sb)
 		j++;
 		i--;
 	}
+	ft_printf("\n");
 }

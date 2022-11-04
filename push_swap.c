@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/02 16:03:46 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/04 14:11:06 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	t_stack *sb;
 
 	if (argc < 2)
-		ft_error();
+		ft_error(NULL, NULL, NULL);
 	ft_are_args_ok(argc, argv);
 	sa = ft_calloc(1, sizeof(t_stack));
 	sb = ft_calloc(1, sizeof(t_stack));
@@ -33,5 +33,4 @@ int	main(int argc, char **argv)
 	free_stacks(sa, sb);
 	return (0);
 }
-//normaliser les valeurs
 //stocker les instructions dans un tab 
