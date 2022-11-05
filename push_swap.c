@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/05 21:18:41 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/05 21:48:03 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 {
 	char	**splitted;
 	t_stack	*sa;
-	t_stack *sb;
+	t_stack	*sb;
 
 	if (argc <= 1)
 		ft_error(NULL, NULL, NULL);
@@ -33,5 +33,3 @@ int	main(int argc, char **argv)
 	free_stacks(sa, sb);
 	return (0);
 }
-//stocker les instructions dans un tab
-//si doublon = il manque 2 free que je trouve pas

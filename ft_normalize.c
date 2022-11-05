@@ -6,14 +6,13 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 13:07:19 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/05 00:21:51 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/05 21:50:49 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/INCLUDES/libft.h"
 #include <stdlib.h>
-
 
 void	ft_sort_int_tab(int *tab, int size)
 {
@@ -40,7 +39,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	}
 }
 
-int	ft_index_of(int	key, int *tab, int size)
+int	ft_index_of(int key, int *tab, int size)
 {
 	int	i;
 
