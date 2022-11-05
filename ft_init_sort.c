@@ -6,20 +6,13 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/04 17:25:26 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/05 15:10:54 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/INCLUDES/libft.h"
 
-//split le tab en 3 > push les 2 plus petits tier dans b, ra les plus grand
-//repeter jusqu'a ce qu'il reste 3 nb dans sa > trier ces 3 nb
-//
-//parse sb et trouver le nombre qui prend le moin de coup pour etre push dans sa
-//(ra+rb / ra+rrb / rra+rb / rra+rrb) > effectuer ce qui prend le moin
-//repeat tant que pb est pas vide
-//rotate pa pour avoir le bon sens
 
 int	ft_stack_is_sorted(t_stack *sa)
 {
@@ -54,7 +47,7 @@ void	ft_sort_three(t_stack *sa)
 
 void	ft_sort_five(t_stack *sa, t_stack *sb)
 {
-	ft_printf_stack(sa, sb);
+	//ft_printf_stack(sa, sb);
 	if (ft_index_of(0, sa->tab, sa->size) >= 2)
 	{
 		while (sa->tab[sa->size - 1] != 0)
@@ -65,9 +58,9 @@ void	ft_sort_five(t_stack *sa, t_stack *sb)
 		while (sa->tab[sa->size - 1] != 0)
 			reverse(sa, 'a');
 	}
-	ft_printf_stack(sa, sb);
+	//ft_printf_stack(sa, sb);
 	push_b(sa, sb);
-	ft_printf_stack(sa, sb);
+	//ft_printf_stack(sa, sb);
 	if (ft_index_of(1, sa->tab, sa->size) >= 2)
 	{
 		while (sa->tab[sa->size - 1] != 1)
@@ -78,21 +71,30 @@ void	ft_sort_five(t_stack *sa, t_stack *sb)
 		while (sa->tab[sa->size - 1] != 1)
 			reverse(sa, 'a');
 	}
-	ft_printf_stack(sa, sb);
+	//ft_printf_stack(sa, sb);
 	push_b(sa, sb);
-	ft_printf_stack(sa, sb);
+	//ft_printf_stack(sa, sb);
 	ft_sort_three(sa);
-	ft_printf_stack(sa, sb);
+	//ft_printf_stack(sa, sb);
 	push_a(sa, sb);
 	push_a(sa ,sb);
-	ft_printf_stack(sa, sb);
+	//ft_printf_stack(sa, sb);
 }
 
 void	ft_sort_more(t_stack *sa, t_stack *sb)
 {
 	while (sa->size != 5)
-		push_b(sa, sb);
+	{
+	//split le tab en 3 > push les 2 plus petits tier dans b, ra les plus grand
+	//repeter jusqu'a ce qu'il reste 3 nb dans sa > trier ces 3 nb
+	//
+//parse sb et trouver le nombre qui prend le moin de coup pour etre push dans sa
+	//(ra+rb / ra+rrb / rra+rb / rra+rrb) > effectuer ce qui prend le moin
+	//repeat tant que pb est pas vide
+	//rotate pa pour avoir le bon sens
+	}
 	ft_sort_five(sa, sb);
+	return ;
 }
 
 int	ft_init_sort(t_stack *sa, t_stack *sb)
