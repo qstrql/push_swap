@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:21:10 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/04 17:23:38 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/05 21:32:40 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ void	ft_verif_args(char *argv)
 	is_sign = 1;
 	while (argv[i] != '\0')
 	{
-		if (ft_isdigit(argv[i]) == 1)
+		if (ft_isdigit(argv[i]) == 1 || argv[i] == ' ')
 			is_sign = 0;
-		else if (argv[i] == ' ')
-			i++;
 		else if ((argv[i] == '+' || argv[i] == '-') && is_sign < 2)
 			is_sign += 1;
 		else

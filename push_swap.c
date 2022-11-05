@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/04 23:38:46 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/05 21:18:41 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	t_stack	*sa;
 	t_stack *sb;
 
-	if (argc < 2)
+	if (argc <= 1)
 		ft_error(NULL, NULL, NULL);
 	ft_are_args_ok(argc, argv);
 	sa = ft_calloc(1, sizeof(t_stack));

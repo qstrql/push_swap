@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/05 15:10:54 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/05 21:41:07 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,38 +47,23 @@ void	ft_sort_three(t_stack *sa)
 
 void	ft_sort_five(t_stack *sa, t_stack *sb)
 {
-	//ft_printf_stack(sa, sb);
 	if (ft_index_of(0, sa->tab, sa->size) >= 2)
-	{
 		while (sa->tab[sa->size - 1] != 0)
 			rotate(sa, 'a');
-	}
 	else
-	{
 		while (sa->tab[sa->size - 1] != 0)
 			reverse(sa, 'a');
-	}
-	//ft_printf_stack(sa, sb);
 	push_b(sa, sb);
-	//ft_printf_stack(sa, sb);
 	if (ft_index_of(1, sa->tab, sa->size) >= 2)
-	{
 		while (sa->tab[sa->size - 1] != 1)
 			rotate(sa, 'a');
-	}
 	else
-	{
 		while (sa->tab[sa->size - 1] != 1)
 			reverse(sa, 'a');
-	}
-	//ft_printf_stack(sa, sb);
 	push_b(sa, sb);
-	//ft_printf_stack(sa, sb);
 	ft_sort_three(sa);
-	//ft_printf_stack(sa, sb);
 	push_a(sa, sb);
 	push_a(sa ,sb);
-	//ft_printf_stack(sa, sb);
 }
 
 void	ft_sort_more(t_stack *sa, t_stack *sb)
