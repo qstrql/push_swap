@@ -6,22 +6,13 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:28:13 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/04 17:22:33 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/07 13:18:53 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
 #include <stdlib.h>
-
-void	ft_swap(int *a, int *b)
-{
-	int	buffer;
-
-	buffer = *a;
-	*a = *b;
-	*b = buffer;
-}
 
 void	free_stacks(t_stack *stack_a, t_stack *stack_b)
 {	

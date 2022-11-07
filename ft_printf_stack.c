@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:35:01 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/04 10:35:27 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/07 14:04:18 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 #include "libft/INCLUDES/ft_printf.h"
 #include "libft/INCLUDES/libft.h"
 
-void	ft_printf_stack(t_stack *sa, t_stack *sb)
+void	ft_printf_stack(t_stack *s, char c)
 {
 	int	i;
 	int	j;
 
-	i = sa->size - 1;
+	i = s->size - 1;
 	j = 1;
-	while (j <= sa->size)
+	while (j <= s->size)
 	{
-		ft_printf("a: (%d) | [%d] -- b: (%d) | [%d] \n", i, sa->tab[i], i, sb->tab[i]);
+		ft_printf("%c : (%d) | [%d]\n", c, i, s->tab[i]);
 		j++;
 		i--;
 	}

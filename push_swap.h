@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/05 00:22:04 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/07 14:04:38 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,16 @@ typedef struct s_stack
 {
 	int	*tab;
 	int	size;
+	int	max_size;
 }				t_stack;
 
 //ft_utils.c
-void	ft_swap(int *a, int *b);
 void	ft_error(char **splitted, t_stack *sa, int *tab);
 void	free_all(char **splited);
 void	free_stacks(t_stack *stack_a, t_stack *stack_b);
-void	ft_printf_stack(t_stack *sa, t_stack *sb);
+
+
+void	ft_printf_stack(t_stack *s, char c);
 
 //ft_are_args_ok.c
 void	ft_are_args_ok(int argc, char **argv);

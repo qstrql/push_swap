@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:17:59 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/05 21:16:51 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/07 13:30:51 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ char	**ft_process_args(int argc, char **argv, t_stack *stack)
 		}
 	}
 	stack->size = ft_count_tab_size(joined);
+	stack->max_size = ft_count_tab_size(joined);
 	splitted = ft_split(joined, ' ');
 	free(joined);
 	return (splitted);
