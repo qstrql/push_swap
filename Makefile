@@ -6,7 +6,7 @@
 #    By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 12:29:21 by mjouot            #+#    #+#              #
-#    Updated: 2022/11/04 10:34:32 by mjouot           ###   ########.fr        #
+#    Updated: 2022/11/07 17:47:47 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = push_swap.c \
 	   \
 	   ft_printf_stack.c 
 
-CC = cc
+CC = clang
 OBJS = $(SRCS:.c=.o)
 FLAGS = -Wall -Wextra -Werror -I ./libft/INCLUDES/
 

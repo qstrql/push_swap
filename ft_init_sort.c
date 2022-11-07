@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/07 14:10:36 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/07 18:02:04 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,15 @@ void	ft_sort_five(t_stack *sa, t_stack *sb)
 {
 	ft_smart_rotate(sa , 0);
 	push_b(sa, sb);
-	push_b(sa, sb);
+	if (sa->size == 4)
+	{
+		ft_smart_rotate(sa , 1);
+		push_b(sa, sb);
+	}
 	ft_sort_three(sa);
 	push_a(sa, sb);
-	push_a(sa ,sb);
+	if (sb->size == 1)
+		push_a(sa, sb);
 }
 
 void	ft_sort_more(t_stack *sa, t_stack *sb)
@@ -82,8 +87,6 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 	i = 0;
 	pushed = 0;
 	size = sa->size;
-	ft_printf_stack(sa, 'a');
-	ft_printf_stack(sb, 'b');
 	while (size > 5 && i < size && pushed < size / 2)
 	{
 		if (sa->tab[sa->size - 1] <= size / 2)
@@ -95,16 +98,12 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 			rotate(sa, 'a');
 		i++;
 	}
-	ft_printf_stack(sa, 'a');
-	ft_printf_stack(sb, 'b');
 	while (size - pushed > 3)
 	{
 		push_b(sa, sb);
 		pushed++;
 	}
 	ft_sort_three(sa);
-	ft_printf_stack(sa, 'a');
-	ft_printf_stack(sb, 'b');
 }
 
 int	ft_init_sort(t_stack *sa, t_stack *sb)
