@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/08 11:00:07 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/08 18:05:16 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,17 @@ void	ft_sort_three(t_stack *sa)
 		swap(sa, 'a');
 }
 
-void	ft_smart_rotate(t_stack *sa, int key)
+void	ft_smart_rotate_sb(t_stack *sb, int key)
+{
+	if (ft_index_of(key, sb->tab, sb->size) >= sb->size / 2)
+		while (sb->tab[sb->size - 1] != key)
+			rotate(sb, 'b');
+	else
+		while (sb->tab[sb->size - 1] != key)
+			reverse(sb, 'b');
+}
+
+void	ft_smart_rotate_sa(t_stack *sa, int key)
 {
 	if (ft_index_of(key, sa->tab, sa->size) >= sa->size / 2)
 		while (sa->tab[sa->size - 1] != key)
@@ -66,11 +76,11 @@ void	ft_smart_rotate(t_stack *sa, int key)
 
 void	ft_sort_five(t_stack *sa, t_stack *sb)
 {
-	ft_smart_rotate(sa , 0);
+	ft_smart_rotate_sa(sa , 0);
 	push_b(sa, sb);
 	if (sa->size == 4)
 	{
-		ft_smart_rotate(sa , 1);
+		ft_smart_rotate_sa(sa , 1);
 		push_b(sa, sb);
 	}
 	ft_sort_three(sa);
@@ -79,34 +89,49 @@ void	ft_sort_five(t_stack *sa, t_stack *sb)
 		push_a(sa, sb);
 }
 
+void	ft_push_all(t_stack *sa, t_stack *sb)
+{
+	int	i;
+	int	j;
+	int	k;
+	int	pushed;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	pushed = 0;
+	while (++j <= 3)
+	{
+		while ((i + k++) < sa->max_size && pushed * 4 < sa->max_size * j)
+		{
+				if (sa->tab[sa->size - 1] * 4 <= sa->max_size * j)
+				{
+					push_b(sa, sb);
+					pushed++;
+				}
+				else
+					rotate(sa, 'a');
+		}
+		i += 25;
+		k = 0;
+		pushed = 0;
+	}
+}
+
 void	ft_sort_more(t_stack *sa, t_stack *sb)
 {
 	int	i;
-	int	pushed;
-	int	size;
 
-	i = 0;
-	pushed = 0;
-	size = sa->size;
-	while (size > 5 && i < size && pushed < size / 2)
+	i = 1;
+	ft_push_all(sa, sb);
+	while (sa->size != 0)
+		push_b(sa, sb);
+	while (sb->size != 0)
 	{
-		if (sa->tab[sa->size - 1] <= size / 2)
-		{
-			push_b(sa, sb);
-			pushed++;
-		}
-		else
-			rotate(sa, 'a');
+		ft_smart_rotate_sb(sb, sa->max_size - i);
+		push_a(sa, sb);
 		i++;
 	}
-	while (size - pushed > 3)
-	{
-		push_b(sa, sb);
-		pushed++;
-	}
-	ft_printf_stack(sa, 'a');
-	ft_printf_stack(sb, 'b');
-	ft_sort_three(sa);
 }
 
 int	ft_init_sort(t_stack *sa, t_stack *sb)
