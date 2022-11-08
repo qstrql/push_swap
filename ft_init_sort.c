@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/07 18:02:04 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/08 11:00:07 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 	//split le tab en 3 > push les 2 plus petits tier dans b, ra les plus grand
 	//repeter jusqu'a ce qu'il reste 3 nb dans sa > trier ces 3 nb
 	//
-//parse sb et trouver le nombre qui prend le moin de coup pour etre push dans sa
-	//(ra+rb / ra+rrb / rra+rb / rra+rrb) > effectuer ce qui prend le moin
+	//get where each number goes
+	//calculate least move
+	//do moves
 	//repeat tant que pb est pas vide
-	//rotate pa pour avoir le bon sens
+	//smart rotate
 
 int	ft_stack_is_sorted(t_stack *sa)
 {
@@ -55,7 +56,7 @@ void	ft_sort_three(t_stack *sa)
 
 void	ft_smart_rotate(t_stack *sa, int key)
 {
-	if (ft_index_of(0, sa->tab, sa->size) >= sa->size / 2)
+	if (ft_index_of(key, sa->tab, sa->size) >= sa->size / 2)
 		while (sa->tab[sa->size - 1] != key)
 			rotate(sa, 'a');
 	else
@@ -103,6 +104,8 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 		push_b(sa, sb);
 		pushed++;
 	}
+	ft_printf_stack(sa, 'a');
+	ft_printf_stack(sb, 'b');
 	ft_sort_three(sa);
 }
 
