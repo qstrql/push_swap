@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:06:24 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/09 21:08:56 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/09 21:25:01 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_printf_target(t_stack *sb)
 	j = 1;
 	while (j <= sb->size)
 	{
-		ft_printf("b : (%d) | [%d]\n", i, sb->target[i]);
+		ft_printf("target b : (%d) | [%d] > [%d]\n", i, sb->tab[i], sb->target[i]);
 		j++;
 		i--;
 	}
