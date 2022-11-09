@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/09 21:07:26 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/09 22:20:23 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,33 +52,18 @@ void	ft_push_all(t_stack *sa, t_stack *sb)
 	}
 }
 
-int	ft_target(t_stack *sa, int key_b, int target)
+int	ft_target(t_stack *sa, int key_b)
 {
 	int	i;
-	int	idx;
+	int	target;
 
-	i = 0;
-	idx = INT_MAX;
-	while (i < sa->size - 1)
+	target = sa->size - 1;
+	i = sa->size - 1;
+	while (i != 0)
 	{
-		if (sa->tab[sa->size - i] > key_b && sa->tab[sa->size - i] < idx)
-		{
-			idx = sa->tab[sa->size - i];
-			target = sa->tab[sa->size - i];
-		}
-		i++;
-	}
-	if (idx != INT_MAX)
-		return (target);
-	i = 0;
-	while (i < sa->size - 1)
-	{
-		if (sa->tab[sa->size - i] < idx)
-		{
-			idx = sa->tab[sa->size - i];
-			target = sa->tab[sa->size - i];
-		}
-		i++;
+		if (key_b > sa->tab[i])
+			target = i;
+		i--;
 	}
 	return (target);
 }
@@ -86,18 +71,16 @@ int	ft_target(t_stack *sa, int key_b, int target)
 void	ft_target_position(t_stack *sa, t_stack *sb)
 {
 	int	i;
-	int	j;
 	int	target;
 
-	i = 0;
-	j = sb->size - 1;
+	i = sb->size - 1;
 	target = 0;
-	while (i < sb->size - 1)
+	while (i != 0)
 	{
-		target = ft_target(sa, sb->tab[sb->size - i], target);
-		sb->target[j] = target;
-		j--;
-		i++;
+		target = ft_target(sa, sb->tab[i]);
+		sb->target[i] = target;
+		target = 0;
+		i--;
 	}
 }
 
