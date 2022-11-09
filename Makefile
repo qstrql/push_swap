@@ -6,7 +6,7 @@
 #    By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 12:29:21 by mjouot            #+#    #+#              #
-#    Updated: 2022/11/07 17:47:47 by mjouot           ###   ########.fr        #
+#    Updated: 2022/11/09 21:07:07 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,10 @@ SRCS = push_swap.c \
 	   ft_moves.c \
 	   ft_init_sort.c \
 	   ft_normalize.c \
+	   ft_sort_utils.c \
 	   \
-	   ft_printf_stack.c 
+	   ft_printf_stack.c \
+	   ft_printf_target.c
 
 CC = clang
 OBJS = $(SRCS:.c=.o)

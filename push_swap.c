@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/07 13:52:06 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/09 21:01:21 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	ft_normalize(sa);
 	sb = ft_calloc(1, sizeof(t_stack));
 	sb->tab = ft_calloc(sa->size + 1, sizeof(int));
+	sb->target = ft_calloc(sa->size + 1, sizeof(int));
 	sb->size = 0;
 	ft_init_sort(sa, sb);
 	free_stacks(sa, sb);

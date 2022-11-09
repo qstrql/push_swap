@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/07 14:04:38 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/09 21:05:29 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_stack
 {
 	int	*tab;
+	int	*target;
 	int	size;
 	int	max_size;
 }				t_stack;
@@ -29,7 +30,8 @@ void	free_all(char **splited);
 void	free_stacks(t_stack *stack_a, t_stack *stack_b);
 
 
-void	ft_printf_stack(t_stack *s, char c);
+void	ft_printf_stack(t_stack *sa, t_stack *sb);
+void	ft_printf_target(t_stack *sb);
 
 //ft_are_args_ok.c
 void	ft_are_args_ok(int argc, char **argv);
@@ -54,11 +56,17 @@ void	rotate(t_stack *stack, char c);
 void	reverse(t_stack *stack, char c);
 
 //ft_init_sort.c
-int		ft_stack_is_sorted(t_stack *sa);
-void	ft_sort_three(t_stack *sa);
-void	ft_sort_five(t_stack *sa, t_stack *sb);
+void	ft_push_all(t_stack *sa, t_stack *sb);
 void	ft_sort_more(t_stack *sa, t_stack *sb);
 int		ft_init_sort(t_stack *sa, t_stack *sb);
+
+//ft_sort_utils.c
+int		ft_stack_is_sorted(t_stack *sa);
+void	ft_smart_rotate_sb(t_stack *sb, int key);
+void	ft_smart_rotate_sa(t_stack *sa, int key);
+void	ft_sort_three(t_stack *sa);
+void	ft_sort_five(t_stack *sa, t_stack *sb);
+
 
 //ft_normalize.c
 void	ft_normalize(t_stack *stack);
