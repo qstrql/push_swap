@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/09 22:20:23 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/09 22:52:00 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_target(t_stack *sa, int key_b)
 
 	target = sa->size - 1;
 	i = sa->size - 1;
-	while (i != 0)
+	while (i >= 0)
 	{
 		if (key_b > sa->tab[i])
 			target = i;
@@ -75,7 +75,7 @@ void	ft_target_position(t_stack *sa, t_stack *sb)
 
 	i = sb->size - 1;
 	target = 0;
-	while (i != 0)
+	while (i >= 0)
 	{
 		target = ft_target(sa, sb->tab[i]);
 		sb->target[i] = target;
@@ -92,6 +92,14 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 	ft_push_all(sa, sb);
 	while (sa->size != 3)
 		push_b(sa, sb);
+/*	
+	while (sb->size != 0)
+	{
+		ft_smart_rotate_sb(sb, sa->max_size - i);
+		push_a(sa, sb);
+		i++;
+	}
+*/
 	ft_sort_three(sa);
 	ft_target_position(sa, sb);
 	ft_printf_stack(sa, sb);

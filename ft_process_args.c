@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:17:59 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/07 13:30:51 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/09 22:47:28 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,12 @@ char	**ft_process_args(int argc, char **argv, t_stack *stack)
 	joined = ft_calloc(1, sizeof(char));
 	if (joined == NULL)
 		return (NULL);
-	if (argc > 1)
+	while (i < argc)
 	{
-		while (i < argc)
-		{
-			joined = ft_realloc(joined, argv[i]);
-			if (i < argc - 1)
-				joined = ft_realloc(joined, " ");
-			i++;
-		}
+		joined = ft_realloc(joined, argv[i]);
+		if (i < argc - 1)
+			joined = ft_realloc(joined, " ");
+		i++;
 	}
 	stack->size = ft_count_tab_size(joined);
 	stack->max_size = ft_count_tab_size(joined);
