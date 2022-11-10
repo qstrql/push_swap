@@ -6,7 +6,7 @@
 #    By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 12:29:21 by mjouot            #+#    #+#              #
-#    Updated: 2022/11/09 21:07:07 by mjouot           ###   ########.fr        #
+#    Updated: 2022/11/10 12:47:38 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,9 @@ SRCS = push_swap.c \
 	   ft_printf_stack.c \
 	   ft_printf_target.c
 
-CC = clang
+CC = gcc
 OBJS = $(SRCS:.c=.o)
-FLAGS = -Wall -Wextra -Werror -I ./libft/INCLUDES/
+FLAGS = -Wall -Wextra -Werror -ggdb3 -I ./libft/INCLUDES/
 
 $(NAME): $(OBJS)
 		make extra -C libft
