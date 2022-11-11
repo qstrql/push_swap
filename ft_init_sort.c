@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/11 16:28:09 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/11 23:32:21 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_target(t_stack *sa, int key_b)
 		if (min > tmp)
 		{
 			min = tmp;
-			closest = ft_index_of(i, sa->tab, sa->size);
+			closest = i;
 		}
 		i--;
 	}
@@ -80,24 +80,46 @@ void	ft_target_position(t_stack *sa, t_stack *sb)
 
 void	ft_sort_more(t_stack *sa, t_stack *sb)
 {
-	// int	save;
+	int	save;
 
-	// save = 0;
-	ft_printf_stack(sb, sa);
-	ft_push_all(sa, sb);
+	save = 0;
+	ft_push_all(sa, sb); //segfault if 5 < size < 16
 	while (sa->size != 3)
 		push_b(sa, sb);	
 	ft_sort_three(sa);
-	ft_target_position(sa, sb);
-	/*
+	while (sb->size != 0)
+	{
+		ft_target_position(sa, sb);
+		save = ft_lowest_move_cost(sa, sb);
+		ft_get_cost_a(sa, sb, sb->size - save, save);
+		ft_get_cost_b(sb, sb->size - save, save);
+		ft_exec_moves(sa, sb);
+	}
+	if (ft_stack_is_sorted(sa) == 0)
+		ft_smart_rotate_sa(sa, 0);
+	/*ft_target_position(sa, sb);
 	save = ft_lowest_move_cost(sa, sb);
 	ft_get_cost_a(sa, sb, sb->size - save, save);
 	ft_get_cost_b(sb, sb->size - save, save);
-	ft_exec_moves(sa, sb);
-	*/
+	reverse(sb, 'b');
+	push_a(sa, sb);
 	ft_target_position(sa, sb);
-	ft_printf_target(sb);
+	save = ft_lowest_move_cost(sa, sb);
+	ft_get_cost_a(sa, sb, sb->size - save, save);
+	ft_get_cost_b(sb, sb->size - save, save);
+	reverse(sb, 'b');
+	push_a(sa, sb);
+	ft_target_position(sa, sb);
+	save = ft_lowest_move_cost(sa, sb);
+	ft_get_cost_a(sa, sb, sb->size - save, save);
+	ft_get_cost_b(sb, sb->size - save, save);
+	// ft_exec_moves(sa, sb);
 	ft_printf_stack(sb, sa);
+	ft_printf_target(sb);
+	ft_printf("value : %d\n", sb->tab[save]);
+	ft_printf("save : %d\n", save);
+	ft_printf("cost a : %d\n", sb->cost_a);
+	ft_printf("cost b : %d\n\n", sb->cost_b);*/
 }
 
 int	ft_init_sort(t_stack *sa, t_stack *sb)
