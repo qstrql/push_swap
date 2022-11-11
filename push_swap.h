@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/11 11:03:47 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/11 15:09:38 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	free_stacks(t_stack *stack_a, t_stack *stack_b);
 
 void	ft_printf_stack(t_stack *sa, t_stack *sb);
 void	ft_printf_target(t_stack *sb);
-void	ft_printf_cost(t_stack *sb);
 
 //ft_are_args_ok.c
 void	ft_are_args_ok(int argc, char **argv);
@@ -58,6 +57,10 @@ void	push_b(t_stack *stack_a, t_stack *stack_b);
 void	rotate(t_stack *stack, char c);
 void	reverse(t_stack *stack, char c);
 
+//ft_double_moves.c
+void	rr(t_stack *sa, t_stack *sb);
+void	rrr(t_stack *sa, t_stack *sb);
+
 //ft_init_sort.c
 void	ft_push_all(t_stack *sa, t_stack *sb);
 void	ft_sort_more(t_stack *sa, t_stack *sb);
@@ -70,6 +73,12 @@ void	ft_smart_rotate_sa(t_stack *sa, int key);
 void	ft_sort_three(t_stack *sa);
 void	ft_sort_five(t_stack *sa, t_stack *sb);
 
+//ft_exec_moves.c
+void	ft_exec_rotate(t_stack *sa, t_stack *sb);
+void	ft_exec_reverse(t_stack *sa, t_stack *sb);
+void	ft_exec_rr(t_stack *sa, t_stack *sb);
+void	ft_exec_rrr(t_stack *sa, t_stack *sb);
+void	ft_exec_moves(t_stack *sa, t_stack *sb);
 
 //ft_normalize.c
 void	ft_normalize(t_stack *stack);
