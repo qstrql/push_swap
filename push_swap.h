@@ -80,6 +80,11 @@ void	ft_exec_rr(t_stack *sa, t_stack *sb);
 void	ft_exec_rrr(t_stack *sa, t_stack *sb);
 void	ft_exec_moves(t_stack *sa, t_stack *sb);
 
+//ft_lowest_move_cost.c
+int	ft_get_cost_b(t_stack *sb, int key_b, int i);
+int	ft_get_cost_a(t_stack *sa, t_stack *sb, int key_b, int i);
+int	ft_lowest_move_cost(t_stack *sa, t_stack *sb);
+
 //ft_normalize.c
 void	ft_normalize(t_stack *stack);
 int		ft_index_of(int key, int *tab, int size);
