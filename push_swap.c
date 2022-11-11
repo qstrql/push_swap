@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/10 10:37:23 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/11 11:16:06 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	main(int argc, char **argv)
 	sb->tab = ft_calloc(sa->size + 1, sizeof(int));
 	sb->target = ft_calloc(sa->size + 1, sizeof(int));
 	sb->size = 0;
+	sb->cost_a = 0;
+	sb->cost_b = 0;
 	ft_init_sort(sa, sb);
 	free_stacks(sa, sb);
 	return (0);

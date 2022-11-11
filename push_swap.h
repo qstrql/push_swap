@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/09 22:47:34 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/11 11:03:47 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ typedef struct s_stack
 {
 	int	*tab;
 	int	*target;
+	int	cost_a;
+	int	cost_b;
 	int	size;
 	int	max_size;
 }				t_stack;
@@ -32,6 +34,7 @@ void	free_stacks(t_stack *stack_a, t_stack *stack_b);
 
 void	ft_printf_stack(t_stack *sa, t_stack *sb);
 void	ft_printf_target(t_stack *sb);
+void	ft_printf_cost(t_stack *sb);
 
 //ft_are_args_ok.c
 void	ft_are_args_ok(int argc, char **argv);

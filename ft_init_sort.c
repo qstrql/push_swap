@@ -6,22 +6,14 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/10 13:14:56 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/11 11:33:12 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/INCLUDES/ft_printf.h"
 #include "push_swap.h"
 #include "libft/INCLUDES/libft.h"
 #include <limits.h>
-
-	//split le tab en 3 > push les 2 plus petits tier dans b, ra les plus grand
-	//repeter jusqu'a ce qu'il reste 3 nb dans sa > trier ces 3 nb
-	//
-	//get where each number goes
-	//calculate least move
-	//do moves
-	//repeat tant que pb est pas vide
-	//smart rotate
 
 void	ft_push_all(t_stack *sa, t_stack *sb)
 {
@@ -46,7 +38,7 @@ void	ft_push_all(t_stack *sa, t_stack *sb)
 				else
 					rotate(sa, 'a');
 		}
-		i += 20;
+		i += sa->max_size / 5;
 		k = 0;
 		pushed = 0;
 	}
@@ -58,11 +50,20 @@ int	ft_target(t_stack *sa, int key_b)
 	int	target;
 
 	i = sa->size - 1;
-	target = i;
+	target = 500;
 	while (i >= 0)
 	{
-		if (key_b < sa->tab[i] && key_b > sa->tab[i + 1])
-			target = i;
+		if (sa->tab[i] > key_b && sa->tab[i] < target)
+			target = sa->size - 1 - i;
+		i--;
+	}
+	if (target != 500)
+		return (target);
+	i = sa->size - 1;
+	while (i >= 0)
+	{
+		if (sa->tab[i] < target)
+			target = i + 1;
 		i--;
 	}
 	return (target);
@@ -80,27 +81,43 @@ void	ft_target_position(t_stack *sa, t_stack *sb)
 	}
 }
 
+int	ft_get_cost(t_stack *sb, int key_b, int i)
+{
+	sb->cost_a = sb->target[key_b];
+	sb->cost_b = i;
+	return (sb->cost_a + sb->cost_b);
+}
+
 void	ft_sort_more(t_stack *sa, t_stack *sb)
 {
-	int	i;
+	// int	i;
+	// int	cost;
+	int	save;
+	// int	cost_min;
 
-	i = 1;
+	// cost = 100;
+	// cost_min = 100;
+	save = 1;
 	ft_push_all(sa, sb);
 	while (sa->size != 3)
 		push_b(sa, sb);	
-
-	while (sb->size != 0)
-	{
-		ft_smart_rotate_sb(sb, sa->max_size - i);
-		push_a(sa, sb);
-		i++;
-	}
-/*
 	ft_sort_three(sa);
 	ft_target_position(sa, sb);
-	ft_printf_stack(sa, sb);
+/*	while (i < sb->size - 1)
+	{
+		cost = ft_get_cost(sb, sb->size - i, i);
+		if (cost < cost_min)
+		{
+			cost_min = cost;
+			save = i;
+		}
+		i++;
+	}*/
+	ft_get_cost(sb, sb->size - save, save);
+	ft_printf_stack(sb, sa);
 	ft_printf_target(sb);
-*/
+	ft_printf("cost a : %d\n", sb->cost_a);
+	ft_printf("cost b : %d\n", sb->cost_b);
 }
 
 int	ft_init_sort(t_stack *sa, t_stack *sb)
