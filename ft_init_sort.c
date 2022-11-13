@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/13 19:10:28 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/13 19:25:39 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void	ft_push_all(t_stack *sa, t_stack *sb)
 	j = 0;
 	k = 0;
 	pushed = 0;
-	while (++j <= 4)
+	while (++j <= 2)
 	{
-		while ((i + k++) < sa->max_size && pushed * 5 < sa->max_size * j)
+		while ((i + k++) < sa->max_size && pushed * 3 < sa->max_size * j)
 		{
-				if (sa->tab[sa->size - 1] * 5 <= sa->max_size * j)
+				if (sa->tab[sa->size - 1] * 3 <= sa->max_size * j)
 				{
 					push_b(sa, sb);
 					pushed++;
@@ -37,7 +37,7 @@ void	ft_push_all(t_stack *sa, t_stack *sb)
 				else
 					rotate(sa, 'a');
 		}
-		i += sa->max_size / 5;
+		i += sa->max_size / 3;
 		k = 0;
 		pushed = 0;
 	}
@@ -87,17 +87,15 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 	while (sa->size != 3)
 		push_b(sa, sb);	
 	ft_sort_three(sa);
-
 	while (sb->size != 0)
 	{
 		ft_target_position(sa, sb);
 		save = ft_lowest_move_cost(sa, sb);
-		ft_get_cost_a(sa, sb, sb->size - save, save);
+		ft_get_cost_a(sa, sb, save);
 		ft_get_cost_b(sb, sb->size - save, save);
 		ft_exec_moves(sa, sb);
 	}
-	if (ft_stack_is_sorted(sa) == 0)
-		ft_smart_rotate_sa(sa, 0);
+	ft_smart_rotate_sa(sa, 0);
 /*
 	ft_printf("\n");
 	int	i = 0;

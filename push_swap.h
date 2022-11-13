@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/11 19:34:02 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/13 19:26:56 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	ft_exec_moves(t_stack *sa, t_stack *sb);
 
 //ft_lowest_move_cost.c
 int	ft_get_cost_b(t_stack *sb, int key_b, int i);
-int	ft_get_cost_a(t_stack *sa, t_stack *sb, int key_b, int i);
+int	ft_get_cost_a(t_stack *sa, t_stack *sb, int i);
 int	ft_lowest_move_cost(t_stack *sa, t_stack *sb);
 
 //ft_normalize.c
