@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/13 17:30:00 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/13 19:10:28 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 	while (sa->size != 3)
 		push_b(sa, sb);	
 	ft_sort_three(sa);
-/*
+
 	while (sb->size != 0)
 	{
 		ft_target_position(sa, sb);
@@ -98,10 +98,10 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 	}
 	if (ft_stack_is_sorted(sa) == 0)
 		ft_smart_rotate_sa(sa, 0);
-*/
+/*
 	ft_printf("\n");
 	int	i = 0;
-	while (i < 3)
+	while (i < 0)
 	{
 		ft_target_position(sa, sb);
 		save = ft_lowest_move_cost(sa, sb);
@@ -115,14 +115,25 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 	save = ft_lowest_move_cost(sa, sb);
 	ft_get_cost_a(sa, sb, sb->size - save, save);
 	ft_get_cost_b(sb, sb->size - save, save);
-//	ft_exec_moves(sa, sb);
+//	ft_exec_moves(sa, sb);*/
+/*
+	ft_target_position(sa, sb);
+	while (save < sb->size) {
+		ft_get_cost_a(sa, sb, sb->size - save, save);
+		ft_get_cost_b(sb, sb->size - save, save);
+		ft_printf("value : %d\n", sb->tab[save]);
+		ft_printf("save : %d\n", save);
+		ft_printf("cost a : %d\n", sb->cost_a);
+		ft_printf("cost b : %d\n\n", sb->cost_b);
+		save++;
+	}
 
 	ft_printf_target(sb);
-	ft_printf_stack(sb, sa);
 	ft_printf("value : %d\n", sb->tab[save]);
 	ft_printf("save : %d\n", save);
 	ft_printf("cost a : %d\n", sb->cost_a);
-	ft_printf("cost b : %d\n\n", sb->cost_b);
+	ft_printf("cost b : %d\n\n", sb->cost_b);*/
+	// ft_printf_stack(sb, sa);
 }
 
 int	ft_init_sort(t_stack *sa, t_stack *sb)
