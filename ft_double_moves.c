@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:48:36 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/11 14:52:36 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/13 16:53:10 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	rrr(t_stack *sa, t_stack *sb)
 	int	tmp_a;
 	int	tmp_b;
 	
-	ft_printf("rr\n");
+	ft_printf("rrr\n");
 	tmp_a = sa->tab[0];
 	tmp_b = sb->tab[0];
 	ft_memmove(sa->tab, sa->tab + 1, sa->size * sizeof(int));
