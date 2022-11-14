@@ -23,6 +23,8 @@ typedef struct s_stack
 	int	max_size;
 }				t_stack;
 
+void	ft_printf_stack(t_stack *sa, t_stack *sb);
+
 //ft_utils.c
 void	ft_error(char **splitted, t_stack *sa, int *tab);
 void	free_all(char **splited);

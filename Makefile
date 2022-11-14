@@ -19,7 +19,8 @@ SRCS = push_swap.c \
 	   ft_moves.c \
 	   ft_init_sort.c \
 	   ft_normalize.c \
-	   ft_sort_utils.c 
+	   ft_sort_utils.c \
+	   ft_printf_stack.c
 
 CC = gcc
 OBJS = $(SRCS:.c=.o)
