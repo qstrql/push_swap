@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/14 15:13:36 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/14 16:14:00 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	rrr(t_stack *sa, t_stack *sb);
 //ft_init_sort.c
 void	ft_push_all(t_stack *sa, t_stack *sb, int div);
 void	ft_sort_more(t_stack *sa, t_stack *sb);
-int		ft_init_sort(t_stack *sa, t_stack *sb);
+void	ft_init_sort(t_stack *sa, t_stack *sb);
 
 //ft_sort_utils.c
 int		ft_stack_is_sorted(t_stack *sa);

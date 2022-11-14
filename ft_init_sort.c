@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/14 16:01:07 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/14 16:16:27 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 	save = 0;
 	if (sa->max_size < 450)
 	{
-		ft_push_all(sa, sb, 3); //segfault if 5 < size < 16
+		ft_push_all(sa, sb, 9); //segfault if 5 < size < 16
 		while (sa->size != 0)
 			push_b(sa, sb);
 		while (sb->size != 0)
@@ -95,7 +95,7 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 	}
 	if (sa->max_size > 450)
 	{
-		ft_push_all(sa, sb, 7); //segfault if 5 < size < 16
+		ft_push_all(sa, sb, 9); //segfault if 5 < size < 16
 		while (sa->size != 3)
 			push_b(sa, sb);	
 		ft_sort_three(sa);
@@ -111,30 +111,17 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 	}
 }
 
-int	ft_init_sort(t_stack *sa, t_stack *sb)
+void	ft_init_sort(t_stack *sa, t_stack *sb)
 {
 	if (sa->size == 1)
-		return (1);
+		return ;
 	if (sa->size == 2)
-	{
 		if (sa->tab[0] < sa->tab[1])
 			swap(sa, 'a'); 
-		return (1);
-	}
 	if (sa->size == 3 && ft_stack_is_sorted(sa) == 0)
-	{
 		ft_sort_three(sa);
-		return (1);
-	}
 	if ((sa->size == 4 || sa->size == 5) && ft_stack_is_sorted(sa) == 0)
-	{
 		ft_sort_five(sa, sb);
-		return (1);
-	}
 	if (sa->size > 5 && ft_stack_is_sorted(sa) == 0) 
-	{
 		ft_sort_more(sa, sb);
-		return (1);
-	}
-	return (0);
 }
