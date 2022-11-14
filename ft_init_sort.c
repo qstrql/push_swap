@@ -39,75 +39,22 @@ void	ft_push_all(t_stack *sa, t_stack *sb, int div)
 	}
 }
 
-int	ft_target(t_stack *sa, int key_b)
-{
-	int	i;
-	int	closest;
-	int	min;
-	int	tmp;
-
-	i = sa->size - 1;
-	closest = 0;
-	min = 500;
-	while (i >= 0)
-	{
-		tmp = ft_abs(sa->tab[i] - key_b);
-		if (min > tmp)
-		{
-			min = tmp;
-			closest = i;
-		}
-		i--;
-	}
-	return (closest);
-}
-
-void	ft_target_position(t_stack *sa, t_stack *sb)
-{
-	int	i;
-
-	i = sb->size - 1;
-	while (i >= 0)
-	{
-		sb->target[i] = ft_target(sa, sb->tab[i]);
-		i--;
-	}
-}
-
 void	ft_sort_more(t_stack *sa, t_stack *sb)
 {
 	int	i;
-	int	save;
 
 	i = 1;
-	save = 0;
 	if (sa->max_size < 450)
-	{
-		ft_push_all(sa, sb, 9); //segfault if 5 < size < 16
-		while (sa->size != 0)
-			push_b(sa, sb);
-		while (sb->size != 0)
-		{
-			ft_smart_rotate_sb(sb, sa->max_size - i);
-			push_a(sa, sb);
-			i++;
-		}
-	}
+		ft_push_all(sa, sb, 3);
 	if (sa->max_size > 450)
+		ft_push_all(sa, sb, 9);
+	while (sa->size != 0)
+		push_b(sa, sb);
+	while (sb->size != 0)
 	{
-		ft_push_all(sa, sb, 9); //segfault if 5 < size < 16
-		while (sa->size != 3)
-			push_b(sa, sb);	
-		ft_sort_three(sa);
-		while (sb->size != 0)
-		{
-			ft_target_position(sa, sb);
-			save = ft_lowest_move_cost(sa, sb);
-			ft_get_cost_a(sa, sb, save);
-			ft_get_cost_b(sb, sb->size - save, save);
-			ft_exec_moves(sa, sb);
-		}
-		ft_smart_rotate_sa(sa, 0);
+		ft_smart_rotate_sb(sb, sa->max_size - i);
+		push_a(sa, sb);
+		i++;
 	}
 }
 

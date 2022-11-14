@@ -2,5 +2,6 @@
 *.o
 a.out
 push_swap
+old
 push_swap-testeur-max
 visualizer-push-swap

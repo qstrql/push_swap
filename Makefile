@@ -6,7 +6,7 @@
 #    By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 12:29:21 by mjouot            #+#    #+#              #
-#    Updated: 2022/11/11 23:42:10 by mjouot           ###   ########.fr        #
+#    Updated: 2022/11/14 16:23:11 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = push_swap
@@ -17,15 +17,9 @@ SRCS = push_swap.c \
 	   ft_args_to_tab.c \
 	   ft_process_args.c \
 	   ft_moves.c \
-	   ft_double_moves.c \
 	   ft_init_sort.c \
 	   ft_normalize.c \
-	   ft_lowest_move_cost.c \
-	   ft_sort_utils.c \
-	   ft_exec_moves.c \
-	   \
-	   ft_printf_stack.c \
-	   ft_printf_target.c 
+	   ft_sort_utils.c 
 
 CC = gcc
 OBJS = $(SRCS:.c=.o)
