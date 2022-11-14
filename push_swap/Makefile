@@ -6,7 +6,7 @@
 #    By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 12:29:21 by mjouot            #+#    #+#              #
-#    Updated: 2022/11/14 19:15:09 by mjouot           ###   ########.fr        #
+#    Updated: 2022/11/14 23:02:54 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = push_swap
@@ -28,7 +28,7 @@ OBJS = $(SRCS:.c=.o)
 FLAGS = -Wall -Wextra -Werror -I ../libft/INCLUDES/
 
 ifdef VAR_BONUS
-	SRCS += $(SRCS_BONUS)
+	make -C ../checker
 endif
 
 $(NAME): $(OBJS)

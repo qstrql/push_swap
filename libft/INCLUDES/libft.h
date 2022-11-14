@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 16:15:51 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/02 18:24:54 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/14 22:42:57 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,5 @@ void	ft_putendl(char *s);
 char	*get_next_line(int fd);
 int		ft_intlen(int n);
 int		ft_ishexdigit(int c);
-
+int		ft_strcmp(const char *s1, const char *s2);
 #endif
