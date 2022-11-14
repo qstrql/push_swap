@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/INCLUDES/libft.h"
+#include "../libft/INCLUDES/libft.h"
 #include <stdlib.h>
 #include <limits.h>
 

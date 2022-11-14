@@ -6,14 +6,14 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/14 16:23:43 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/14 19:08:04 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/INCLUDES/libft.h"
+# include "../libft/INCLUDES/libft.h"
 # include <stddef.h>
 
 typedef struct s_stack

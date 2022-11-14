@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/INCLUDES/libft.h"
+#include "../libft/INCLUDES/libft.h"
 
 void	ft_verif_args(char *argv)
 {

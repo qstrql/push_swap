@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/INCLUDES/libft.h"
+#include "../libft/INCLUDES/libft.h"
 
 void	swap(t_stack *stack, char c)
 {

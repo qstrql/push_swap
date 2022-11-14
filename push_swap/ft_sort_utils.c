@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/INCLUDES/ft_printf.h"
 #include "push_swap.h"
-#include "libft/INCLUDES/libft.h"
+#include "../libft/INCLUDES/libft.h"
 
 int	ft_stack_is_sorted(t_stack *sa)
 {

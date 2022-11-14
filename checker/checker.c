@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 16:58:54 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/14 16:23:45 by mjouot           ###   ########.fr       */
+/*   Created: 2022/11/14 19:16:33 by mjouot            #+#    #+#             */
+/*   Updated: 2022/11/14 19:31:51 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "libft/INCLUDES/libft.h"
+#include "../push_swap/push_swap.h"
+#include "../libft/INCLUDES/libft.h"
 #include <stdlib.h>
 
 int	main(int argc, char **argv)
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	t_stack	*sb;
 
 	if (argc <= 1)
-		ft_error(NULL, NULL, NULL);
+		return (0);
 	ft_are_args_ok(argc, argv);
 	sa = ft_calloc(1, sizeof(t_stack));
 	splitted = ft_process_args(argc, argv, sa);
@@ -30,7 +30,4 @@ int	main(int argc, char **argv)
 	sb = ft_calloc(1, sizeof(t_stack));
 	sb->tab = ft_calloc(sa->size + 1, sizeof(int));
 	sb->size = 0;
-	ft_init_sort(sa, sb);
-	free_stacks(sa, sb);
-	return (0);
 }

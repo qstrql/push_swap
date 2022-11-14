@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/INCLUDES/ft_printf.h"
 #include "push_swap.h"
-#include "libft/INCLUDES/libft.h"
+#include "../libft/INCLUDES/libft.h"
 
 void	ft_push_all(t_stack *sa, t_stack *sb, int div)
 {

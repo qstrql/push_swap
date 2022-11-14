@@ -6,7 +6,7 @@
 #    By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 12:29:21 by mjouot            #+#    #+#              #
-#    Updated: 2022/11/14 16:23:11 by mjouot           ###   ########.fr        #
+#    Updated: 2022/11/14 19:15:09 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = push_swap
@@ -19,28 +19,36 @@ SRCS = push_swap.c \
 	   ft_moves.c \
 	   ft_init_sort.c \
 	   ft_normalize.c \
-	   ft_sort_utils.c \
-	   ft_printf_stack.c
+	   ft_sort_utils.c
 
-CC = gcc
+SRCS_BONUS = \
+
+CC = clang
 OBJS = $(SRCS:.c=.o)
-FLAGS = -Wall -Wextra -Werror -ggdb3 -I ./libft/INCLUDES/
+FLAGS = -Wall -Wextra -Werror -I ../libft/INCLUDES/
+
+ifdef VAR_BONUS
+	SRCS += $(SRCS_BONUS)
+endif
 
 $(NAME): $(OBJS)
-		make extra -C libft
-		$(CC) $(FLAGS) $^ -o $(NAME) libft/libft.a
+		make extra -C ../libft
+		$(CC) $(FLAGS) $^ -o $(NAME) ../libft/libft.a
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 
+bonus: $(OBJS)
+	@make VAR_EXTRA=true
+
 clean:
-	make clean -C libft
+	make clean -C ../libft
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f libft/libft.a
+	rm -f ../libft/libft.a
 	rm -f $(NAME)
 
 re: fclean all
