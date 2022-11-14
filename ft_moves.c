@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:09:38 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/05 15:10:32 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/14 18:53:20 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	swap(t_stack *stack, char c)
 void	push_a(t_stack *stack_a, t_stack *stack_b)
 {
 	ft_printf("pa\n");
-    stack_a->size += 1;
+	stack_a->size += 1;
 	stack_b->size -= 1;
 	stack_a->tab[stack_a->size - 1] = stack_b->tab[stack_b->size];
 	stack_b->tab[stack_b->size] = '\0';
@@ -39,7 +39,7 @@ void	push_a(t_stack *stack_a, t_stack *stack_b)
 void	push_b(t_stack *stack_a, t_stack *stack_b)
 {
 	ft_printf("pb\n");
-    stack_b->size += 1;
+	stack_b->size += 1;
 	stack_a->size -= 1;
 	stack_b->tab[stack_b->size - 1] = stack_a->tab[stack_a->size];
 	stack_a->tab[stack_a->size] = '\0';

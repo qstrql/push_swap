@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:24:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/14 15:58:06 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/14 18:50:32 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,11 @@ void	ft_sort_three(t_stack *sa)
 
 void	ft_sort_five(t_stack *sa, t_stack *sb)
 {
-	ft_smart_rotate_sa(sa , 0);
+	ft_smart_rotate_sa(sa, 0);
 	push_b(sa, sb);
 	if (sa->size == 4)
 	{
-		ft_smart_rotate_sa(sa , 1);
+		ft_smart_rotate_sa(sa, 1);
 		push_b(sa, sb);
 	}
 	ft_sort_three(sa);

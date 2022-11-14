@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/14 18:38:18 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/14 19:01:16 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	ft_push_all(t_stack *sa, t_stack *sb, int div)
 		}
 		p += sa->max_size / div;
 	}
+	while (sa->size != 0)
+		push_b(sa, sb);
 }
 
 int	ft_get_cost_b(t_stack *sb, int key_b)
@@ -72,8 +74,6 @@ void	ft_sort_more(t_stack *sa, t_stack *sb)
 		ft_push_all(sa, sb, 3);
 	if (sa->max_size > 450)
 		ft_push_all(sa, sb, 8);
-	while (sa->size != 0)
-		push_b(sa, sb);
 	while (sb->size != 0)
 	{
 		if (ft_push_who(sb, sa->max_size - i, sa->max_size - i - 1) == 0)
@@ -100,11 +100,11 @@ void	ft_init_sort(t_stack *sa, t_stack *sb)
 		return ;
 	if (sa->size == 2)
 		if (sa->tab[0] < sa->tab[1])
-			swap(sa, 'a'); 
+			swap(sa, 'a');
 	if (sa->size == 3 && ft_stack_is_sorted(sa) == 0)
 		ft_sort_three(sa);
 	if ((sa->size == 4 || sa->size == 5) && ft_stack_is_sorted(sa) == 0)
 		ft_sort_five(sa, sb);
-	if (sa->size > 5 && ft_stack_is_sorted(sa) == 0) 
+	if (sa->size > 5 && ft_stack_is_sorted(sa) == 0)
 		ft_sort_more(sa, sb);
 }
