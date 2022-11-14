@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:56:32 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/13 17:30:43 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/14 11:36:52 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_exec_rr(t_stack *sa, t_stack *sb)
 {
 	if (sb->cost_a > 0 && sb->cost_b > 0)
 	{
-		while (sb->cost_a > 0 || sb->cost_b > 0)
+		while (sb->cost_a > 0 && sb->cost_b > 0)
 		{
 			rr(sa, sb);
 			sb->cost_a--;
@@ -71,7 +71,7 @@ void	ft_exec_rrr(t_stack *sa, t_stack *sb)
 {
 	if (sb->cost_a < 0 && sb->cost_b < 0)
 	{
-		while (sb->cost_a < 0 || sb->cost_b < 0)
+		while (sb->cost_a < 0 && sb->cost_b < 0)
 		{
 			rrr(sa, sb);
 			sb->cost_a++;

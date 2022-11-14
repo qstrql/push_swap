@@ -6,40 +6,36 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:24:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/13 19:25:39 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/14 16:01:07 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/INCLUDES/ft_printf.h"
 #include "push_swap.h"
 #include "libft/INCLUDES/libft.h"
 
-void	ft_push_all(t_stack *sa, t_stack *sb)
+void	ft_push_all(t_stack *sa, t_stack *sb, int div)
 {
 	int	i;
-	int	j;
-	int	k;
-	int	pushed;
+	int	p;
 
 	i = 0;
-	j = 0;
-	k = 0;
-	pushed = 0;
-	while (++j <= 2)
+	p = sa->max_size / div;
+	while (p < sa->max_size)
 	{
-		while ((i + k++) < sa->max_size && pushed * 3 < sa->max_size * j)
+		i = 0;
+		while (i < sa->max_size / div)
 		{
-				if (sa->tab[sa->size - 1] * 3 <= sa->max_size * j)
-				{
-					push_b(sa, sb);
-					pushed++;
-				}
-				else
-					rotate(sa, 'a');
+			if (sa->tab[sa->size - 1] < p)
+			{
+				push_b(sa, sb);
+				i++;
+			}
+			else
+				rotate(sa, 'a');
+			if (sb->tab[sb->size - 1] > (p - (sa->max_size / (div + div))))
+				rotate(sb, 'b');
 		}
-		i += sa->max_size / 3;
-		k = 0;
-		pushed = 0;
+		p += sa->max_size / div;
 	}
 }
 
@@ -80,58 +76,39 @@ void	ft_target_position(t_stack *sa, t_stack *sb)
 
 void	ft_sort_more(t_stack *sa, t_stack *sb)
 {
+	int	i;
 	int	save;
 
+	i = 1;
 	save = 0;
-	ft_push_all(sa, sb); //segfault if 5 < size < 16
-	while (sa->size != 3)
-		push_b(sa, sb);	
-	ft_sort_three(sa);
-	while (sb->size != 0)
+	if (sa->max_size < 450)
 	{
-		ft_target_position(sa, sb);
-		save = ft_lowest_move_cost(sa, sb);
-		ft_get_cost_a(sa, sb, save);
-		ft_get_cost_b(sb, sb->size - save, save);
-		ft_exec_moves(sa, sb);
+		ft_push_all(sa, sb, 3); //segfault if 5 < size < 16
+		while (sa->size != 0)
+			push_b(sa, sb);
+		while (sb->size != 0)
+		{
+			ft_smart_rotate_sb(sb, sa->max_size - i);
+			push_a(sa, sb);
+			i++;
+		}
 	}
-	ft_smart_rotate_sa(sa, 0);
-/*
-	ft_printf("\n");
-	int	i = 0;
-	while (i < 0)
+	if (sa->max_size > 450)
 	{
-		ft_target_position(sa, sb);
-		save = ft_lowest_move_cost(sa, sb);
-		ft_get_cost_a(sa, sb, sb->size - save, save);
-		ft_get_cost_b(sb, sb->size - save, save);
-		ft_exec_moves(sa, sb);
-		i++;
+		ft_push_all(sa, sb, 7); //segfault if 5 < size < 16
+		while (sa->size != 3)
+			push_b(sa, sb);	
+		ft_sort_three(sa);
+		while (sb->size != 0)
+		{
+			ft_target_position(sa, sb);
+			save = ft_lowest_move_cost(sa, sb);
+			ft_get_cost_a(sa, sb, save);
+			ft_get_cost_b(sb, sb->size - save, save);
+			ft_exec_moves(sa, sb);
+		}
+		ft_smart_rotate_sa(sa, 0);
 	}
-//	ft_smart_rotate_sa(sa, 0);
-	ft_target_position(sa, sb);
-	save = ft_lowest_move_cost(sa, sb);
-	ft_get_cost_a(sa, sb, sb->size - save, save);
-	ft_get_cost_b(sb, sb->size - save, save);
-//	ft_exec_moves(sa, sb);*/
-/*
-	ft_target_position(sa, sb);
-	while (save < sb->size) {
-		ft_get_cost_a(sa, sb, sb->size - save, save);
-		ft_get_cost_b(sb, sb->size - save, save);
-		ft_printf("value : %d\n", sb->tab[save]);
-		ft_printf("save : %d\n", save);
-		ft_printf("cost a : %d\n", sb->cost_a);
-		ft_printf("cost b : %d\n\n", sb->cost_b);
-		save++;
-	}
-
-	ft_printf_target(sb);
-	ft_printf("value : %d\n", sb->tab[save]);
-	ft_printf("save : %d\n", save);
-	ft_printf("cost a : %d\n", sb->cost_a);
-	ft_printf("cost b : %d\n\n", sb->cost_b);*/
-	// ft_printf_stack(sb, sa);
 }
 
 int	ft_init_sort(t_stack *sa, t_stack *sb)
