@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:16:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/15 18:50:55 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/15 19:11:13 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@
 
 void	ft_do_moves(t_stack *sa, t_stack *sb, char *line)
 {
-	if (ft_strncmp(line, "sa", 2) == 0)
+	if (ft_strncmp(line, "sa\n", 3) == 0)
 		swap(sa);
-	if (ft_strncmp(line, "sb", 2) == 0)
+	if (ft_strncmp(line, "sb\n", 3) == 0)
 		swap(sb);
-	if (ft_strncmp(line, "pa", 2) == 0)
+	if (ft_strncmp(line, "pa\n", 3) == 0)
 		push_a(sa, sb);
-	if (ft_strncmp(line, "pb", 2) == 0)
+	if (ft_strncmp(line, "pb\n", 3) == 0)
 		push_b(sa, sb);
-	if (ft_strncmp(line, "ra", 2) == 0)
+	if (ft_strncmp(line, "ra\n", 3) == 0)
 		rotate(sa);
-	if (ft_strncmp(line, "rb", 2) == 0)
+	if (ft_strncmp(line, "rb\n", 3) == 0)
 		rotate(sb);
-	if (ft_strncmp(line, "rra", 3) == 0)
+	if (ft_strncmp(line, "rra\n", 4) == 0)
 		reverse(sa);
-	if (ft_strncmp(line, "rrb", 3) == 0)
+	if (ft_strncmp(line, "rrb\n", 4) == 0)
 		reverse(sb);
-	if (ft_strncmp(line, "ss", 2) == 0)
+	if (ft_strncmp(line, "ss\n", 3) == 0)
 		ss(sa, sb);
-	if (ft_strncmp(line, "rr", 2) == 0)
+	if (ft_strncmp(line, "rr\n", 3) == 0)
 		rr(sa, sb);
-	if (ft_strncmp(line, "rrr", 3) == 0)
+	if (ft_strncmp(line, "rrr\n", 4) == 0)
 		rrr(sa, sb);
 	else
 		ft_error(NULL, NULL, NULL);
@@ -47,7 +47,7 @@ void	ft_check_result(t_stack *sa, t_stack *sb)
 	if (ft_stack_is_sorted(sa) == 1 && sb->size == 0)
 		ft_printf("OK\n");
 	else
-		ft_printf("KO\n");
+		ft_printf("KO\n");//ca marche pas ici
 }
 
 void	ft_init_check(t_stack *sa, t_stack *sb)
@@ -62,10 +62,10 @@ void	ft_init_check(t_stack *sa, t_stack *sb)
 			free(line);
 			return ;
 		}
-		ft_do_moves(sa, sb, line);
+		ft_do_moves(sa, sb, line);//marche que pour rrr?
 		free(line);
 	}
-	ft_check_result(sa, sb);
+	ft_check_result(sa, sb);//ca rentre pas la dedans?
 }
 
 int	main(int argc, char **argv)

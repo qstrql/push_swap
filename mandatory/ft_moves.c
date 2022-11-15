@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:09:38 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/14 18:53:20 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/15 18:57:46 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ void	reverse(t_stack *stack, char c)
 {
 	int	tmp;
 
-	tmp = stack->tab[0];
 	if (c == 'a')
 		ft_printf("rra\n");
 	if (c == 'b')
 		ft_printf("rrb\n");
+	tmp = stack->tab[0];
 	ft_memmove(stack->tab, stack->tab + 1, stack->size * sizeof(int));
 	stack->tab[stack->size - 1] = tmp;
 }
@@ -62,11 +62,11 @@ void	rotate(t_stack *stack, char c)
 {
 	int	tmp;
 
-	tmp = stack->tab[stack->size - 1];
 	if (c == 'a')
 		ft_printf("ra\n");
 	if (c == 'b')
 		ft_printf("rb\n");
+	tmp = stack->tab[stack->size - 1];
 	ft_memmove(stack->tab + 1, stack->tab, stack->size * sizeof(int));
 	stack->tab[0] = tmp;
 }
