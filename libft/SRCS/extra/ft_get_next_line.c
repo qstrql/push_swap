@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_gnl.c                                           :+:      :+:    :+:   */
+/*   ft_get_next_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:59:03 by mjouot            #+#    #+#             */
-/*   Updated: 2022/10/30 17:00:56 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/15 12:37:57 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ static char	*ft_reader(char *buf, int fd)
 	return (buf);
 }
 
-char	*get_next_line(int fd)
+char	*gnl(int fd)
 {
 	char		*line;
 	static char	*buf[1024] = {NULL};

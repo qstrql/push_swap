@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:16:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/14 22:59:39 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/15 13:28:44 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,29 @@
 void	ft_do_moves(t_stack *sa, t_stack *sb, char *line)
 {
 	if (ft_strcmp(line, "sa") == 0)
-		return (swap(sa, 'a'));
+		swap(sa, 'a');
 	if (ft_strcmp(line, "sb") == 0)
-		return (swap(sb, 'b'));
+		swap(sb, 'b');
 	if (ft_strcmp(line, "pa") == 0)
-		return (push_a(sa, sb));
+		push_a(sa, sb);
 	if (ft_strcmp(line, "pb") == 0)
-		return (push_b(sa, sb));
+		push_b(sa, sb);
 	if (ft_strcmp(line, "ra") == 0)
-		return (rotate(sa, 'a'));
+		rotate(sa, 'a');
 	if (ft_strcmp(line, "rb") == 0)
-		return (rotate(sb, 'b'));
+		rotate(sb, 'b');
 	if (ft_strcmp(line, "rra") == 0)
-		return (reverse(sa, 'a'));
+		reverse(sa, 'a');
 	if (ft_strcmp(line, "rrb") == 0)
-		return (reverse(sb, 'b'));
+		reverse(sb, 'b');
 	if (ft_strcmp(line, "ss") == 0)
-		return (ss(sa, sb));
+		ss(sa, sb);
 	if (ft_strcmp(line, "rr") == 0)
-		return (rr(sa, sb));
+		rr(sa, sb);
 	if (ft_strcmp(line, "rrr") == 0)
-		return (rrr(sa, sb));
-	return (0);
+		rrr(sa, sb);
+	else
+		ft_error(NULL, NULL, NULL);
 }
 
 void	ft_check_result(t_stack *sa, t_stack *sb)
@@ -52,13 +53,10 @@ void	ft_check_result(t_stack *sa, t_stack *sb)
 
 void	ft_init_check(t_stack *sa, t_stack *sb)
 {
-	char	*line;
-
-	while (ft_get_next_line(&line))
-	{
-		if (ft_do_moves(sa, sb, line) == 0)
-			ft_error(NULL, NULL, NULL);
-	}
+	char *line
+	
+	while (line = gnl(0))
+		ft_do_moves(sa, sb, line);
 	ft_check_result(sa, sb);
 }
 
