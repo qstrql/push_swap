@@ -6,7 +6,7 @@
 #    By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 12:29:21 by mjouot            #+#    #+#              #
-#    Updated: 2022/11/15 18:08:12 by mjouot           ###   ########.fr        #
+#    Updated: 2022/11/15 18:20:52 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = push_swap
@@ -34,7 +34,7 @@ SRCS_BONUS = bonus/checker.c \
 CC = clang
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
-FLAGS = -Wall -Wextra -Werror -I ./libft/INCLUDES/
+FLAGS = -Wall -Wextra -Werror -I ./libft/INCLUDES/ -ggdb3
 
 $(NAME): $(OBJS)
 		make extra -C libft

@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:16:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/15 18:05:08 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/15 18:50:55 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@
 
 void	ft_do_moves(t_stack *sa, t_stack *sb, char *line)
 {
-	if (ft_strcmp(line, "sa\n") == 0)
+	if (ft_strncmp(line, "sa", 2) == 0)
 		swap(sa);
-	if (ft_strcmp(line, "sb\n") == 0)
+	if (ft_strncmp(line, "sb", 2) == 0)
 		swap(sb);
-	if (ft_strcmp(line, "pa\n") == 0)
+	if (ft_strncmp(line, "pa", 2) == 0)
 		push_a(sa, sb);
-	if (ft_strcmp(line, "pb\n") == 0)
+	if (ft_strncmp(line, "pb", 2) == 0)
 		push_b(sa, sb);
-	if (ft_strcmp(line, "ra\n") == 0)
+	if (ft_strncmp(line, "ra", 2) == 0)
 		rotate(sa);
-	if (ft_strcmp(line, "rb\n") == 0)
+	if (ft_strncmp(line, "rb", 2) == 0)
 		rotate(sb);
-	if (ft_strcmp(line, "rra\n") == 0)
+	if (ft_strncmp(line, "rra", 3) == 0)
 		reverse(sa);
-	if (ft_strcmp(line, "rrb\n") == 0)
+	if (ft_strncmp(line, "rrb", 3) == 0)
 		reverse(sb);
-	if (ft_strcmp(line, "ss\n") == 0)
+	if (ft_strncmp(line, "ss", 2) == 0)
 		ss(sa, sb);
-	if (ft_strcmp(line, "rr\n") == 0)
+	if (ft_strncmp(line, "rr", 2) == 0)
 		rr(sa, sb);
-	if (ft_strcmp(line, "rrr\n") == 0)
+	if (ft_strncmp(line, "rrr", 3) == 0)
 		rrr(sa, sb);
 	else
 		ft_error(NULL, NULL, NULL);
@@ -54,12 +54,16 @@ void	ft_init_check(t_stack *sa, t_stack *sb)
 {
 	char *line;
 	
-	line = gnl(0);
-	while (line != NULL)
+	while (1)
 	{
+		line = gnl(0);
+		if (!line || ft_strlen(line) == 0)
+		{
+			free(line);
+			return ;
+		}
 		ft_do_moves(sa, sb, line);
 		free(line);
-		line = gnl(0);
 	}
 	ft_check_result(sa, sb);
 }
