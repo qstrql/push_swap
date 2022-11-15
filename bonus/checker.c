@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:16:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/15 19:11:13 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/15 20:19:24 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,25 @@ void	ft_do_moves(t_stack *sa, t_stack *sb, char *line)
 {
 	if (ft_strncmp(line, "sa\n", 3) == 0)
 		swap(sa);
-	if (ft_strncmp(line, "sb\n", 3) == 0)
+	else if (ft_strncmp(line, "sb\n", 3) == 0)
 		swap(sb);
-	if (ft_strncmp(line, "pa\n", 3) == 0)
+	else if (ft_strncmp(line, "pa\n", 3) == 0)
 		push_a(sa, sb);
-	if (ft_strncmp(line, "pb\n", 3) == 0)
+	else if (ft_strncmp(line, "pb\n", 3) == 0)
 		push_b(sa, sb);
-	if (ft_strncmp(line, "ra\n", 3) == 0)
+	else if (ft_strncmp(line, "ra\n", 3) == 0)
 		rotate(sa);
-	if (ft_strncmp(line, "rb\n", 3) == 0)
+	else if (ft_strncmp(line, "rb\n", 3) == 0)
 		rotate(sb);
-	if (ft_strncmp(line, "rra\n", 4) == 0)
+	else if (ft_strncmp(line, "rra\n", 4) == 0)
 		reverse(sa);
-	if (ft_strncmp(line, "rrb\n", 4) == 0)
+	else if (ft_strncmp(line, "rrb\n", 4) == 0)
 		reverse(sb);
-	if (ft_strncmp(line, "ss\n", 3) == 0)
+	else if (ft_strncmp(line, "ss\n", 3) == 0)
 		ss(sa, sb);
-	if (ft_strncmp(line, "rr\n", 3) == 0)
+	else if (ft_strncmp(line, "rr\n", 3) == 0)
 		rr(sa, sb);
-	if (ft_strncmp(line, "rrr\n", 4) == 0)
+	else if (ft_strncmp(line, "rrr\n", 4) == 0)
 		rrr(sa, sb);
 	else
 		ft_error(NULL, NULL, NULL);
@@ -60,12 +60,12 @@ void	ft_init_check(t_stack *sa, t_stack *sb)
 		if (!line || ft_strlen(line) == 0)
 		{
 			free(line);
-			return ;
+			break ;
 		}
-		ft_do_moves(sa, sb, line);//marche que pour rrr?
+		ft_do_moves(sa, sb, line);
 		free(line);
 	}
-	ft_check_result(sa, sb);//ca rentre pas la dedans?
+	ft_check_result(sa, sb);
 }
 
 int	main(int argc, char **argv)
