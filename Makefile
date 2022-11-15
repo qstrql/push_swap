@@ -6,50 +6,59 @@
 #    By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 12:29:21 by mjouot            #+#    #+#              #
-#    Updated: 2022/11/15 14:15:07 by mjouot           ###   ########.fr        #
+#    Updated: 2022/11/15 16:51:32 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = push_swap
 
-SRCS = push_swap.c \
-	   ft_utils.c \
-	   ft_are_args_ok.c \
-	   ft_args_to_tab.c \
-	   ft_process_args.c \
-	   ft_moves.c \
-	   ft_init_sort.c \
-	   ft_normalize.c \
-	   ft_sort_utils.c
+SRCS = \
+	mandatory/push_swap.c \
+	mandatory/ft_utils.c \
+	mandatory/ft_are_args_ok.c \
+	mandatory/ft_args_to_tab.c \
+	mandatory/ft_process_args.c \
+	mandatory/ft_moves.c \
+	mandatory/ft_init_sort.c \
+	mandatory/ft_normalize.c \
+	mandatory/ft_sort_utils.c
 
-SRCS_BONUS = ../checker/checker.c \
-			 ../checker/ft_double_moves.c
+SRCS_BONUS = bonus/checker.c \
+	 bonus/ft_double_moves.c \
+	 mandatory/ft_utils.c \
+	 mandatory/ft_are_args_ok.c \
+	 mandatory/ft_args_to_tab.c \
+	 mandatory/ft_process_args.c \
+	 mandatory/ft_moves.c \
+	 mandatory/ft_init_sort.c \
+	 mandatory/ft_normalize.c \
+	 mandatory/ft_sort_utils.c
 
 CC = clang
 OBJS = $(SRCS:.c=.o)
-FLAGS = -Wall -Wextra -Werror -I ../libft/INCLUDES/ -I ../checker/checker.h
-
-ifdef VAR_BONUS
-	make -C ../checker
-endif
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+FLAGS = -Wall -Wextra -Werror -I ./libft/INCLUDES/ -I ./checker/checker.h
 
 $(NAME): $(OBJS)
-		make extra -C ../libft
-		$(CC) $(FLAGS) $^ -o $(NAME) ../libft/libft.a
+		make extra -C libft
+		$(CC) $(FLAGS) $^ -o $(NAME) libft/libft.a
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 
-bonus: $(OBJS)
-	@make VAR_EXTRA=true
+bonus: $(OBJS_BONUS)
+		make extra -C libft
+		$(CC) $(FLAGS) $(OBJS_BONUS) -o checker libft/libft.a
 
 clean:
-	make clean -C ../libft
+	make clean -C libft
+	rm -f $(OBJS_BONUS)
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f ../libft/libft.a
+	rm -f checker
+	rm -f libft/libft.a
 	rm -f $(NAME)
 
 re: fclean all

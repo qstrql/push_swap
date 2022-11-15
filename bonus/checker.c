@@ -6,12 +6,12 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:16:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/15 14:17:19 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/15 16:29:12 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-#include "../push_swap/push_swap.h"
+#include "../mandatory/push_swap.h"
 #include "../libft/INCLUDES/libft.h"
 #include <stdlib.h>
 
