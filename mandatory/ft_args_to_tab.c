@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:23:14 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/05 21:44:04 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/15 17:34:03 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ int	*ft_args_to_tab(char **splitted, t_stack *stack)
 	int		*tab;
 
 	tab = ft_calloc(stack->size + 1, sizeof(int));
+	if (tab == NULL)
+		return (NULL);
 	j = 0;
 	i = stack->size - 1;
 	while (i >= 0)
