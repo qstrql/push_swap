@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:16:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/15 20:19:24 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/15 20:26:57 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_check_result(t_stack *sa, t_stack *sb)
 	if (ft_stack_is_sorted(sa) == 1 && sb->size == 0)
 		ft_printf("OK\n");
 	else
-		ft_printf("KO\n");//ca marche pas ici
+		ft_printf("KO\n");
 }
 
 void	ft_init_check(t_stack *sa, t_stack *sb)
