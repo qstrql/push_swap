@@ -6,38 +6,37 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:16:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/15 17:37:04 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/15 18:05:08 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-#include "../mandatory/push_swap.h"
 #include "../libft/INCLUDES/libft.h"
 #include <stdlib.h>
 
 void	ft_do_moves(t_stack *sa, t_stack *sb, char *line)
 {
-	if (ft_strcmp(line, "sa") == 0)
-		swap(sa, 'a');
-	if (ft_strcmp(line, "sb") == 0)
-		swap(sb, 'b');
-	if (ft_strcmp(line, "pa") == 0)
+	if (ft_strcmp(line, "sa\n") == 0)
+		swap(sa);
+	if (ft_strcmp(line, "sb\n") == 0)
+		swap(sb);
+	if (ft_strcmp(line, "pa\n") == 0)
 		push_a(sa, sb);
-	if (ft_strcmp(line, "pb") == 0)
+	if (ft_strcmp(line, "pb\n") == 0)
 		push_b(sa, sb);
-	if (ft_strcmp(line, "ra") == 0)
-		rotate(sa, 'a');
-	if (ft_strcmp(line, "rb") == 0)
-		rotate(sb, 'b');
-	if (ft_strcmp(line, "rra") == 0)
-		reverse(sa, 'a');
-	if (ft_strcmp(line, "rrb") == 0)
-		reverse(sb, 'b');
-	if (ft_strcmp(line, "ss") == 0)
+	if (ft_strcmp(line, "ra\n") == 0)
+		rotate(sa);
+	if (ft_strcmp(line, "rb\n") == 0)
+		rotate(sb);
+	if (ft_strcmp(line, "rra\n") == 0)
+		reverse(sa);
+	if (ft_strcmp(line, "rrb\n") == 0)
+		reverse(sb);
+	if (ft_strcmp(line, "ss\n") == 0)
 		ss(sa, sb);
-	if (ft_strcmp(line, "rr") == 0)
+	if (ft_strcmp(line, "rr\n") == 0)
 		rr(sa, sb);
-	if (ft_strcmp(line, "rrr") == 0)
+	if (ft_strcmp(line, "rrr\n") == 0)
 		rrr(sa, sb);
 	else
 		ft_error(NULL, NULL, NULL);
@@ -58,8 +57,9 @@ void	ft_init_check(t_stack *sa, t_stack *sb)
 	line = gnl(0);
 	while (line != NULL)
 	{
-		line = gnl(0);
 		ft_do_moves(sa, sb, line);
+		free(line);
+		line = gnl(0);
 	}
 	ft_check_result(sa, sb);
 }

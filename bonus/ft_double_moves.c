@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "checker.h"
-#include "../mandatory/push_swap.h"
 #include "../libft/INCLUDES/libft.h"
 
 void	ss(t_stack *sa, t_stack *sb)
