@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:16:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/16 18:44:57 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 18:46:15 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,6 @@ int	main(int argc, char **argv)
 		return (1);
 	sb->size = 0;
 	ft_init_check(sa, sb);
-	ft_printf_stack(sa, sb);
 	free_stacks(sa, sb);
 	return (0);
 }
