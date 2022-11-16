@@ -6,13 +6,20 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:16:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/15 20:26:57 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 14:09:28 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 #include "../libft/INCLUDES/libft.h"
 #include <stdlib.h>
+
+void	ft_free_checker(t_stack *sa, t_stack *sb, char *line)
+{
+	free(line);
+	free_stacks(sa, sb);
+	ft_error(NULL, NULL, NULL);
+}
 
 void	ft_do_moves(t_stack *sa, t_stack *sb, char *line)
 {
@@ -39,7 +46,7 @@ void	ft_do_moves(t_stack *sa, t_stack *sb, char *line)
 	else if (ft_strncmp(line, "rrr\n", 4) == 0)
 		rrr(sa, sb);
 	else
-		ft_error(NULL, NULL, NULL);
+		ft_free_checker(sa, sb, line);
 }
 
 void	ft_check_result(t_stack *sa, t_stack *sb)
