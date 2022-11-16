@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 22:52:29 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/15 18:06:11 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 16:50:13 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	free_stacks(t_stack *stack_a, t_stack *stack_b);
 //ft_are_args_ok.c
 void	ft_are_args_ok(int argc, char **argv);
 void	ft_verif_args(char *argv);
-int		ft_zero_check(char *argv);
+int		ft_space_only(char *argv);
 
 //ft_process_args.c
 char	**ft_process_args(int argc, char **argv, t_stack *stack);
@@ -47,17 +47,17 @@ void	ft_smart_rotate_sa(t_stack *sa, int key);
 void	ft_sort_three(t_stack *sa);
 void	ft_sort_five(t_stack *sa, t_stack *sb);
 
-//ft_normalize.c
-void	ft_normalize(t_stack *stack);
-int		ft_index_of(int key, int *tab, int size);
-void	ft_sort_int_tab(int *tab, int size);
-
 //ft_moves_checker.c
 void	swap(t_stack *stack);
 void	push_a(t_stack *stack_a, t_stack *stack_b);
 void	push_b(t_stack *stack_a, t_stack *stack_b);
 void	reverse(t_stack *stack);
 void	rotate(t_stack *stack);
+
+//ft_normalize.c
+void	ft_normalize(t_stack *stack);
+int		ft_index_of(int key, int *tab, int size);
+void	ft_sort_int_tab(int *tab, int size);
 
 //ft_double_moves.c
 void	ss(t_stack *sa, t_stack *sb);

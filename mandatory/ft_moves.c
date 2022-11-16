@@ -19,7 +19,6 @@ void	swap(t_stack *stack, char c)
 
 	if (stack->size < 2)
 		return ;
-	tmp = 0;
 	if (c == 'a')
 		ft_printf("sa\n");
 	if (c == 'b')

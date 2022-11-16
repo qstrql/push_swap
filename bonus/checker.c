@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:16:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/16 14:40:38 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 17:09:21 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void	ft_init_check(t_stack *sa, t_stack *sb)
 		ft_do_moves(sa, sb, line);
 		free(line);
 	}
-	ft_check_result(sa, sb);
 }
 
 int	main(int argc, char **argv)
@@ -82,7 +81,7 @@ int	main(int argc, char **argv)
 	t_stack	*sb;
 
 	if (argc <= 1)
-		return (0);
+		ft_error(NULL, NULL, NULL);
 	ft_are_args_ok(argc, argv);
 	sa = ft_calloc(1, sizeof(t_stack));
 	splitted = ft_process_args(argc, argv, sa);
@@ -92,6 +91,7 @@ int	main(int argc, char **argv)
 	sb->tab = ft_calloc(sa->size + 1, sizeof(int));
 	sb->size = 0;
 	ft_init_check(sa, sb);
+	ft_check_result(sa, sb);
 	free_stacks(sa, sb);
 	return (0);
 }
