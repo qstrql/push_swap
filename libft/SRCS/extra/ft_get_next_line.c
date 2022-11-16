@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:59:03 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/16 14:33:29 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 14:44:21 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,15 +109,16 @@ static char	*ft_reader(char *buf, int fd)
 char	*gnl(int fd)
 {
 	char		*line;
-	char		*buf[1024] = {NULL};
+	char		*buf;
 
+	buf = NULL;
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buf[fd] = ft_reader(buf[fd], fd);
-	if (buf[fd] == NULL)
+	buf = ft_reader(buf, fd);
+	if (buf == NULL)
 		return (NULL);
-	line = ft_get_line(buf[fd]);
-	buf[fd] = ft_get_extra(buf[fd]);
-	free(buf[fd]);
+	line = ft_get_line(buf);
+	buf = ft_get_extra(buf);
+	free(buf);
 	return (line);
 }

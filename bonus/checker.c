@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:16:33 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/16 14:09:28 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 14:40:38 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ void	ft_check_result(t_stack *sa, t_stack *sb)
 
 void	ft_init_check(t_stack *sa, t_stack *sb)
 {
-	char *line;
-	
+	char	*line;
+
 	while (1)
 	{
 		line = gnl(0);

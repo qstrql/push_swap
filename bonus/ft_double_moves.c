@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 22:49:08 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/16 10:58:51 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 14:41:45 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 void	ss(t_stack *sa, t_stack *sb)
 {
-	if (sa->size < 2 || sb->size < 2)
-		return ;
 	int	tmp;
 
+	if (sa->size < 2 || sb->size < 2)
+		return ;
 	tmp = 0;
 	tmp = sa->tab[sa->size - 1];
 	sa->tab[sa->size - 1] = sa->tab[sa->size - 2];
@@ -31,11 +31,11 @@ void	ss(t_stack *sa, t_stack *sb)
 
 void	rr(t_stack *sa, t_stack *sb)
 {
-	if (sa->size < 1 || sb->size < 1)
-		return ;
 	int	tmp_a;
 	int	tmp_b;
 
+	if (sa->size < 1 || sb->size < 1)
+		return ;
 	tmp_a = sa->tab[sa->size - 1];
 	tmp_b = sb->tab[sb->size - 1];
 	ft_memmove(sa->tab + 1, sa->tab, sa->size * sizeof(int));
@@ -46,11 +46,11 @@ void	rr(t_stack *sa, t_stack *sb)
 
 void	rrr(t_stack *sa, t_stack *sb)
 {
-	if (sa->size < 1 || sb->size < 1)
-		return ;
 	int	tmp_a;
 	int	tmp_b;
 
+	if (sa->size < 1 || sb->size < 1)
+		return ;
 	tmp_a = sa->tab[0];
 	tmp_b = sb->tab[0];
 	ft_memmove(sa->tab, sa->tab + 1, sa->size * sizeof(int));

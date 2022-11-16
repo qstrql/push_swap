@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:09:38 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/16 11:01:04 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 14:42:24 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	swap(t_stack *stack, char c)
 {
 	int	tmp;
-	
+
 	if (stack->size < 2)
 		return ;
 	tmp = 0;
