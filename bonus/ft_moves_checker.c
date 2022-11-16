@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 17:49:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/16 17:24:38 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 18:29:37 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ void	rotate(t_stack *stack)
 		return ;
 	tmp = 0;
 	tmp = stack->tab[stack->size - 1];
-	ft_memmove(stack->tab, stack->tab - 1, stack->size * sizeof(int));
+	ft_memmove(stack->tab + 1, stack->tab, stack->size * sizeof(int));
 	stack->tab[0] = tmp;
 }

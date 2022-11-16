@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:24:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/14 18:50:32 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 18:41:54 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_stack_is_sorted(t_stack *sa)
 	int	i;
 
 	i = 0;
-	while (i < sa->size)
+	while (i < sa->size - 1)
 	{
 		if (sa->tab[i] < sa->tab[i + 1])
 			return (0);

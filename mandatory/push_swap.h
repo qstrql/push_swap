@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:30:57 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/16 16:49:35 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 17:29:38 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ char	*ft_realloc(char *joined, char *argv);
 int		*ft_args_to_tab(char **splitted, t_stack *stack);
 int		ft_duplicates(int *tab, t_stack *stack);
 long	ft_atol(const char *nptr);
-
 
 //ft_sort_utils.c
 int		ft_stack_is_sorted(t_stack *sa);
