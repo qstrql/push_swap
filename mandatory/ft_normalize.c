@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 13:07:19 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/14 15:57:45 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 14:52:18 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	ft_normalize(t_stack *stack)
 
 	i = 0;
 	sorted = ft_calloc(stack->size + 1, sizeof(int));
+	if (sorted == NULL)
+		return ;
 	while (i < stack->size)
 	{
 		sorted[i] = stack->tab[i];
