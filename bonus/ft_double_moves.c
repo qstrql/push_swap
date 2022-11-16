@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@marvin.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 22:49:08 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/15 19:01:05 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 10:58:51 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 void	ss(t_stack *sa, t_stack *sb)
 {
+	if (sa->size < 2 || sb->size < 2)
+		return ;
 	int	tmp;
 
 	tmp = 0;
@@ -29,6 +31,8 @@ void	ss(t_stack *sa, t_stack *sb)
 
 void	rr(t_stack *sa, t_stack *sb)
 {
+	if (sa->size < 1 || sb->size < 1)
+		return ;
 	int	tmp_a;
 	int	tmp_b;
 
@@ -42,6 +46,8 @@ void	rr(t_stack *sa, t_stack *sb)
 
 void	rrr(t_stack *sa, t_stack *sb)
 {
+	if (sa->size < 1 || sb->size < 1)
+		return ;
 	int	tmp_a;
 	int	tmp_b;
 

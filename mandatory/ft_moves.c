@@ -6,7 +6,7 @@
 /*   By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:09:38 by mjouot            #+#    #+#             */
-/*   Updated: 2022/11/15 18:57:46 by mjouot           ###   ########.fr       */
+/*   Updated: 2022/11/16 11:01:04 by mjouot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 void	swap(t_stack *stack, char c)
 {
 	int	tmp;
-
+	
+	if (stack->size < 2)
+		return ;
 	tmp = 0;
 	if (c == 'a')
 		ft_printf("sa\n");
@@ -29,6 +31,8 @@ void	swap(t_stack *stack, char c)
 
 void	push_a(t_stack *stack_a, t_stack *stack_b)
 {
+	if (stack_b->size < 1)
+		return ;
 	ft_printf("pa\n");
 	stack_a->size += 1;
 	stack_b->size -= 1;
@@ -38,6 +42,8 @@ void	push_a(t_stack *stack_a, t_stack *stack_b)
 
 void	push_b(t_stack *stack_a, t_stack *stack_b)
 {
+	if (stack_a->size < 1)
+		return ;
 	ft_printf("pb\n");
 	stack_b->size += 1;
 	stack_a->size -= 1;
@@ -49,6 +55,8 @@ void	reverse(t_stack *stack, char c)
 {
 	int	tmp;
 
+	if (stack->size < 1)
+		return ;
 	if (c == 'a')
 		ft_printf("rra\n");
 	if (c == 'b')
@@ -62,6 +70,8 @@ void	rotate(t_stack *stack, char c)
 {
 	int	tmp;
 
+	if (stack->size < 1)
+		return ;
 	if (c == 'a')
 		ft_printf("ra\n");
 	if (c == 'b')
