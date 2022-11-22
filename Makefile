@@ -6,7 +6,7 @@
 #    By: mjouot <mjouot@student.42angouleme.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 12:29:21 by mjouot            #+#    #+#              #
-#    Updated: 2022/11/16 17:30:24 by mjouot           ###   ########.fr        #
+#    Updated: 2022/11/22 13:47:56 by mjouot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = push_swap
@@ -61,4 +61,5 @@ fclean: clean
 
 re: fclean all
 
+.SILENT:
 .PHONY: all clean fclean re
