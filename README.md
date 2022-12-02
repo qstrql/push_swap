@@ -4,7 +4,7 @@
 - How to use :
   - Clone this repo
   - make
-  - ./push_swap <numbers> (Note : any number from INT_MIN to INT_MAX)
+  - ./push_swap *numbers* (Note : any number from INT_MIN to INT_MAX)
   - make bonus
   - ARG="5 1 2 6 8 4 3 7 9 0"; ./push_swap $ARG | ./checker $ARG
 
