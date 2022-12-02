@@ -1,6 +1,6 @@
 
 42's push_swap : This project involves sorting data on a stack, with a limited set of instructions, and the smallest number of moves.
-- Grade : 125/125 !
+- Grade : 125/100 !
 - How to use :
   - Clone this repo
   - make
