@@ -1,13 +1,12 @@
 
-42's push_swap
-Grade : 125/125 !
-This project involves sorting data on a stack, with a limited set of instructions, and the smallest number of moves.
-How to use :
-- Clone this repo
-- make
-- ./push_swap <numbers> (Note : any number from INT_MIN to INT_MAX)
-- make bonus
-- ARG="5 1 2 6 8 4 3 7 9 0"; ./push_swap $ARG | ./checker $ARG
+42's push_swap : This project involves sorting data on a stack, with a limited set of instructions, and the smallest number of moves.
+- Grade : 125/125 !
+- How to use :
+  - Clone this repo
+  - make
+  - ./push_swap <numbers> (Note : any number from INT_MIN to INT_MAX)
+  - make bonus
+  - ARG="5 1 2 6 8 4 3 7 9 0"; ./push_swap $ARG | ./checker $ARG
 
 [![qstrql's github activity graph](https://activity-graph.herokuapp.com/graph?username=qstrql)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
